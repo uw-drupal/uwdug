@@ -1,3 +1,6 @@
 [submodule "sites/all/themes/uw_boundless"]
 	path = sites/all/themes/uw_boundless
 	url = https://github.com/uw-drupal/uw_boundless.git
+[submodule "sites/all/modules/uwtrumba"]
+	path = sites/all/modules/uwtrumba
+	url = git@bitbucket.org:uwartsci/uwtrumba.git
