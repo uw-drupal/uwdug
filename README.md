@@ -23,16 +23,16 @@ This document explains how to get started working with the site's codebase for d
 2. A **Github account**, with your Github SSH key added to your development environment so you can push and pull from Github as needed.
 3. A **Bitbucket account**, with your Bitbucket SSH key added to your development environment so you can pull from submodules hosted on Bitbucket.
 4. Read access to the following repositories:
-  - https://github.com/uw-drupal/uwdug
-  - https://github.com/uw-drupal/uw_boundless
-  - https://bitbucket.org/uwartsci/uwtrumba/
+    - https://github.com/uw-drupal/uwdug
+    - https://github.com/uw-drupal/uw_boundless
+    - https://bitbucket.org/uwartsci/uwtrumba/
 5. A copy of the site's **database**, **settings.php** file, and **files** directory. Email [uwdrupal@uw.edu](mailto:uwdrupal@uw.edu) to request this.
 
 ## <a name="setup"></a>Setting up the site
 1. Fork the repository in your account on Github.
 2. Clone your fork to your development environment:
 
-    `git clone git@github.com:*username*/uwdug.git`
+    `git clone git@github.com:<username>/uwdug.git`
 3. Initialize and update the submodules:
 ```
 cd uwdug
@@ -51,7 +51,7 @@ git submodule update
 
 Use drush to generate a login link for the admin user. You can change the password for your local site copy if you want. 
 
-    `drush uli`
+    drush uli
 
 You will not be able to use UW NetID login on your local site, because it cannot be registered as a Shibboleth service provider.
 
@@ -65,7 +65,7 @@ We add Drupal as a separate remote repository, so we can fetch changes from Drup
 
 One-time setup:
 
-    `git remote add drupal git://git.drupal.org/project/drupal.git`
+    git remote add drupal git://git.drupal.org/project/drupal.git
 
 Updating core:
 ```
@@ -77,7 +77,7 @@ drush cc all # if there were no database updates
 
 Test that the site works as expected. If it does, push the changes.
 
-    `git push origin`
+    git push origin
 
 ## <a name="updating-contrib"></a>Updating contributed modules and themes
 
