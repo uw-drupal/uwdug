@@ -65,7 +65,7 @@ We add Drupal as a separate remote repository, so we can fetch changes from Drup
 
 One-time setup:
 
-    git remote add drupal git://git.drupal.org/project/drupal.git
+    git remote add drupal https://git.drupal.org/project/drupal.git
 
 Updating core:
 ```
