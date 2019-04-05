@@ -1,0 +1,52 @@
+name = UW DUG Boundless
+description = A Bootstrap 7.x-3.x Sub-theme based on UW Boundless theme: https://github.com/uw-drupal/uw_boundless 
+core = 7.x
+base theme = uw_boundless
+php = 5.3.0
+
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Regions
+;;;;;;;;;;;;;;;;;;;;;
+
+regions[search]         = 'Search'
+regions[navigation]     = 'Navigation'
+regions[highlighted]    = 'Highlighted'
+regions[help]           = 'Help'
+regions[content]        = 'Content'
+regions[sidebar_first]  = 'Primary'
+regions[sidebar_second] = 'Secondary'
+regions[footer]         = 'Footer'
+
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Stylesheets
+;;;;;;;;;;;;;;;;;;;;;
+
+stylesheets[all][] = css/uwdug.css
+
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Scripts
+;;;;;;;;;;;;;;;;;;;;;
+
+; Disable the CDN provider so compiled source files can be used.
+settings[bootstrap_cdn] = ''
+
+
+;;;;;;;;;;;;;;;;;;;;;;
+;; theme settings
+;;;;;;;;;;;;;;;;;;;;;;
+
+settings[uwdug_hero_image_front_default_path] = '//www.washington.edu/brand/files/2014/09/w.jpg'
+settings[uwdug_hero_image_front_default] = 1
+settings[uwdug_hero_image_front_path] = ''
+settings[uwdug_hero_image_default_path] = '//www.washington.edu/brand/files/2014/09/w3.jpg'
+settings[uwdug_hero_image_default] = 1
+settings[uwdug_hero_image_path] = ''
+settings[uwdug_front_page_title_color] = '#ffffff'
+settings[uwdug_front_page_slant_color] = '#ffffff'
+settings[uwdug_front_page_slogan_color] = '#ffffff'
+settings[uwdug_text_shadow_black] = '2px 2px 2px rgba(0, 0, 0, 0.5)'
+settings[uwdug_text_shadow_white] = '2px 2px 2px rgba(255, 255, 255, 0.5)'
+settings[uwdug_sidebar_menu_visibility] = 1
