@@ -1,8 +1,7 @@
-// Insert your styling here.
+/* Insert your styling here.
 // Site title
-// -------------------------
+// -------------------------*/
 
-@font-family-header: "Encode Sans Compressed", sans-serif;
 .uw-body {
     .uw-site-title {
         +p {
@@ -22,11 +21,8 @@
             padding-right: 75px;
         }
     }
-    // div.container.uw-body {
-    //     padding: 20px;
-    // }
 }
-// some exceptions for site-title and site-slogan 
+/* some exceptions for site-title and site-slogan*/ 
 .front {
     .uw-body {
         .uw-site-title {
@@ -59,22 +55,22 @@
     }
 }
 
-// Breadcrumbs
-// -------------------------
+/* Breadcrumbs
+/* -------------------------*/
 .uw-breadcrumbs {
     span {
         padding-top: 0;
     }
 }
-// Page header
-// -------------------------
+/* Page header
+// -------------------------*/
 .page-header {
     margin: 29px 0 14.5px;
     border-bottom: 0;
 }
 
-// Sidebar
-// -------------------------
+/* Sidebar
+// -------------------------*/
 .uw-sidebar {
     .region:not(:last-child) {
         padding-bottom: 30px;
@@ -88,10 +84,10 @@
     }
 }
 
-// Mobile menu
-// -------------------------
+/* Mobile menu
+// -------------------------*/
 nav#mobile-relative {
-    // hide the submenu dropdowns on the rendering of $primary_nav 
+    /* hide the submenu dropdowns on the rendering of $primary_nav*/ 
     .navbar-nav {
         .dawgdrops-menu {
             display: none;
@@ -165,15 +161,15 @@ nav#mobile-relative {
     }
 }
 
-// Content
+/* Content
 // -------------------------
-// path fix from uw.body-content.less
+// path fix from uw.body-content.less*/
 a.more {
     &:after {
         background: url(assets/svg/uw-sprite.svg) no-repeat -206px -492px;
     }
 }
-// path fix from uw.body-content.less
+/* path fix from uw.body-content.less*/
 span.next-page {
     a {
         &:after {
@@ -181,7 +177,7 @@ span.next-page {
       }
     }
 }
-// path fix from uw.body-content.less
+/* path fix from uw.body-content.less*/
 .links {
     a {
         &:after {
@@ -189,8 +185,47 @@ span.next-page {
         }
     }
 }
-
-// form elements
+p.intro {
+	font-family: "Encode Sans Compressed", sans-serif;
+}
+.group-buttons { 
+    text-align:center;
+}
+.group-buttons div.field-type-taxonomy-term-reference {
+   display:inline-block; 
+}
+.group-buttons div.field-type-taxonomy-term-reference .field-item{
+    display:inline-block; 
+	color:#fff;
+	background-color:#4b2f92;
+	font-size:15px;
+	padding:12px;
+	margin-left:12px;
+	margin-right:12px;
+	margin-top:4px;
+	border-radius:12px;
+}
+.group-buttons div.field-name-field-drupal-version.field-type-taxonomy-term-reference .field-item{
+	background-color:#b6a579;
+	background-color:#85754d;
+}
+.group-buttons div.field-name-field-site-type.field-type-taxonomy-term-reference .field-item{
+	background-color:#4b2f92;
+}
+.group-buttons div.field-name-field-audience.field-type-taxonomy-term-reference .field-item{
+	background-color:#000;
+}
+.group-buttons div.field-name-field-base-theme.field-type-taxonomy-term-reference .field-item{
+	background-color:#d9d9d9;
+}
+.group-buttons div.field-type-taxonomy-term-reference .field-item a:link,
+.group-buttons div.field-type-taxonomy-term-reference .field-item a:visited{
+	color:#fff;
+}
+.group-buttons div.field-name-field-base-theme.field-type-taxonomy-term-reference .field-item a:link,
+.group-buttons div.field-name-field-base-theme.field-type-taxonomy-term-reference .field-item a:visited{
+	color:#000;
+/* form elements*/
 // -------------------------
 .radio input[type="radio"], 
 .radio-inline input[type="radio"], 
@@ -218,8 +253,7 @@ span.next-page {
     border-radius: 0;
 }
 
-// views styles
-
+/* views styles*/
 
 .views-exposed-form .checkbox input[type="checkbox"] {
 	left:0;
@@ -229,8 +263,6 @@ span.next-page {
 .views-exposed-form {
 	display: flex;
 	flex-wrap:wrap;
-	border:1px solid #ccc;
-	padding:24px;
 }
 div.views-exposed-widget .checkbox,
 div.views-exposed-widget span.icons {
@@ -246,17 +278,24 @@ div.views-exposed-widget {
 	margin-bottom:20px;
 }
 .views-exposed-form .views-exposed-widget.views-submit-button{
-	display:none;
+	display:block;
 	margin:0;
 }
 .views-exposed-form .views-exposed-widget.views-widget-filter-field_site_type_tid{
 	margin-bottom:0px;
 }
-.views-exposed-form .views-exposed-widget label {
-	font-size:18px;
-	font-family:@font-family-header;
+.views-exposed-form .views-exposed-widget legend,
+.views-exposed-form .views-exposed-widget label{
+	font-family: "Encode Sans Compressed", sans-serif;
 }
-.views-exposed-form .views-exposed-widget .views-widget label {
+.views-exposed-form .views-exposed-widget label.control-label {
+	display:inline-block;
+}
+.views-exposed-form .views-exposed-widget label.option {
+	font-size:18px;
+	font-family: "Encode Sans Compressed", sans-serif;
+}
+.views-exposed-form .views-exposed-widget .views-widget label.option {
 	color:#fff;
 	font-size:15px;
 	background-color:#4b2f92;
@@ -268,18 +307,28 @@ div.views-exposed-widget {
 	top:6px;
 	height:80px;
 }
-//.views-exposed-form taxonomy vocab-specific styles
-.views-exposed-form .views-exposed-widget .views-widget .form-item-field-audience-tid label {
+/*.views-exposed-form .views-exposed-widget taxonomy vocab-specific styles*/
+.views-exposed-form .views-exposed-widgets {
+	width:100%;
+}
+.views-exposed-form .views-exposed-widgets .views-widget{
+	width:100%;
+}
+.views-exposed-form .views-exposed-widget .views-widget .form-item-field-audience-tid label.option {
 	background-color:#000;
 }
-.views-exposed-form .views-exposed-widget .views-widget .checked label {
+.views-exposed-form .views-exposed-widget .views-widget .checked label.option {
 	background-color:#ccc;
 }
-.views-exposed-form .views-exposed-widget .views-widget .form-item-field-drupal-version-tid label {
+.views-exposed-form .views-exposed-widget .views-widget .form-item-field-drupal-version-tid label.option {
 	background-color:#b6a579;
 }
-.views-exposed-form .views-exposed-widget .views-widget .form-item-field-drupal-version-tid .checked label {
+.views-exposed-form .views-exposed-widget .views-widget .form-item-field-drupal-version-tid .checked label.option {
 	background-color:#ccc;
+}
+.views-exposed-form .views-exposed-widget .form-control{
+	display: flex;
+	justify-content:center;
 }
 .views-exposed-form .views-exposed-widget .form-control{
 	border:none;
@@ -289,6 +338,5 @@ div.views-exposed-widget {
 	padding:0;
 }
 .view-showcase #views-exposed-form-showcase-page .views-exposed-widget .form-item{
-	display:inline-block;
-	margin-top:0;
+	display: inline;
 }
