@@ -188,13 +188,13 @@ span.next-page {
 p.intro {
 	font-family: "Encode Sans Compressed", sans-serif;
 }
-.group-buttons { 
+.group-tags { 
     text-align:center;
 }
-.group-buttons div.field-type-taxonomy-term-reference {
+.group-tags div.field-type-taxonomy-term-reference {
    display:inline-block; 
 }
-.group-buttons div.field-type-taxonomy-term-reference .field-item{
+.group-tags div.field-type-taxonomy-term-reference .field-item{
     display:inline-block; 
 	color:#fff;
 	background-color:#4b2f92;
@@ -205,25 +205,25 @@ p.intro {
 	margin-top:4px;
 	border-radius:12px;
 }
-.group-buttons div.field-name-field-drupal-version.field-type-taxonomy-term-reference .field-item{
+.group-tags div.field-name-field-drupal-version.field-type-taxonomy-term-reference .field-item{
 	background-color:#b6a579;
 	background-color:#85754d;
 }
-.group-buttons div.field-name-field-site-type.field-type-taxonomy-term-reference .field-item{
+.group-tags div.field-name-field-site-type.field-type-taxonomy-term-reference .field-item{
 	background-color:#4b2f92;
 }
-.group-buttons div.field-name-field-audience.field-type-taxonomy-term-reference .field-item{
+.group-tags div.field-name-field-audience.field-type-taxonomy-term-reference .field-item{
 	background-color:#000;
 }
-.group-buttons div.field-name-field-base-theme.field-type-taxonomy-term-reference .field-item{
+.group-tags div.field-name-field-base-theme.field-type-taxonomy-term-reference .field-item{
 	background-color:#d9d9d9;
 }
-.group-buttons div.field-type-taxonomy-term-reference .field-item a:link,
-.group-buttons div.field-type-taxonomy-term-reference .field-item a:visited{
+.group-tags div.field-type-taxonomy-term-reference .field-item a:link,
+.group-tags div.field-type-taxonomy-term-reference .field-item a:visited{
 	color:#fff;
 }
-.group-buttons div.field-name-field-base-theme.field-type-taxonomy-term-reference .field-item a:link,
-.group-buttons div.field-name-field-base-theme.field-type-taxonomy-term-reference .field-item a:visited{
+.group-tags div.field-name-field-base-theme.field-type-taxonomy-term-reference .field-item a:link,
+.group-tags div.field-name-field-base-theme.field-type-taxonomy-term-reference .field-item a:visited{
 	color:#000;
 /* form elements*/
 // -------------------------
