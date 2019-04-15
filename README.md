@@ -14,6 +14,7 @@ This document explains how to get started working with the site's codebase for d
 * [Updating Drupal core](#updating-core)
 * [Updating contributed modules and themes](#updating-contrib)
 * [Updating custom modules and themes](#updating-custom)
+* [Applying changes to production site on depts.washington.edu](#applying-production)
 * [Authors](#authors)
 
 ## <a name="prereqs"></a>Prerequisites
@@ -99,6 +100,18 @@ git push origin
 We use [git submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules) to include separate modules and themes maintained by the UW Drupal community. This way they maintain their own git project history and developers can make changes to the submodules and choose which versions to include on the site.
 
 **To-do:** add more details about git submodules.
+
+## <a name="applying-production"></a>Applying changes to production site on depts.washington.edu
+
+A few community members have permission to update the code on the production site. If you have access to the uwdrupal user, please do not edit code there directly. Pull all the changes from the master branch of the repository. Use the following command in the public_html folder:
+
+    git pull --rebase
+
+If submodules have been updated, run the following command to checkout the correct subproject commits:
+
+    git submodule update
+
+Then use drush to run database updates (if needed) and clear caches.
 
 ## <a name="authors"></a>Authors
 
