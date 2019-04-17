@@ -108,7 +108,7 @@ DirectoryIndex index.php index.html index.htm
   # VirtualDocumentRoot and the rewrite rules are not working properly.
   # For example if your site is at http://example.com/drupal uncomment and
   # modify the following line:
-  # RewriteBase /uwdrupal
+  # RewriteBase /drupal
   #
   # If your site is running in a VirtualDocumentRoot at http://example.com/,
   # uncomment the following line:
@@ -158,4 +158,3 @@ AuthType Shibboleth
 ShibRequireSession Off
 ShibUseHeaders On
 Require shibboleth
-
