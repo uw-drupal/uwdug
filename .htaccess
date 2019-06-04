@@ -112,8 +112,7 @@ DirectoryIndex index.php index.html index.htm
   #
   # If your site is running in a VirtualDocumentRoot at http://example.com/,
   # uncomment the following line:
-  #RewriteBase /uwdug
-  RewriteBase /uwdrupal
+  # RewriteBase /uwdrupal
 
   # Pass all requests not referring directly to files in the filesystem to
   # index.php. Clean URLs are handled in drupal_environment_initialize().
@@ -154,3 +153,8 @@ DirectoryIndex index.php index.html index.htm
   Header always set X-Content-Type-Options nosniff
 </IfModule>
 
+# Enable shibboleth authentication
+AuthType Shibboleth
+ShibRequireSession Off
+ShibUseHeaders On
+Require shibboleth
