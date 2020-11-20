@@ -107,6 +107,7 @@ A few community members have permission to update the code on the production sit
 
     git pull --rebase
 
+That command will preserve a `RewriteBase` directive and Shibboleth-related directives that break local development, but must remain in place on production.
 If submodules have been updated, run the following command to checkout the correct subproject commits:
 
     git submodule update
