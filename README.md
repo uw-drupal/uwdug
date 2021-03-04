@@ -110,11 +110,12 @@ We use [git submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules) to 
 
 ## <a name="applying-production"></a>Applying changes to production site on depts.washington.edu
 
-A few community members have permission to update the code on the production site. If you have access to the `uwdrupal` user, please do not edit code there directly. Pull all the changes from the master branch of the repository. Use the following command in the `public_html` folder:
+A few community members have permission to update the code on the production site. If you have access to `actas uwdrupal`, please do not edit code there directly. Pull all the changes from the master branch of the repository. Use the following command in the `public_html` folder:
 
-    git pull --rebase
+    git pull
 
-That command will preserve a `RewriteBase` directive and Shibboleth-related directives that break local development, but must remain in place on production.
+/Nota bene:/ That command previously included `--rebase` in order to preserve a `RewriteBase` directive in `.htaccess` on Ovid whcih broke local development. That difference is now handled by using `.htaccess-lando`, which Lando prefers to `.htaccess`.
+
 If submodules have been updated, run the following command to checkout the correct subproject commits:
 
     git submodule update
