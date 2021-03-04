@@ -20,7 +20,7 @@ This document explains how to get started working with the site's codebase for d
 ## <a name="prereqs"></a>Prerequisites
 1. A **LAMP development environment** with git and drush installed. 
 
-    *For convenience, this project includes Docker configuration files that should work in a Windows 10 environment. If you use these Docker containers, you do not need drush on your machine. You can login to the php container to use drush. Setting up [Docker](https://docs.docker.com/) and [Docker for Drupal](https://wodby.com/docs/stacks/drupal/) is beyond the scope of this document.*
+    *For convenience, this project includes Lando configuration files that should work in most OS environments. If you use Lando, you do not need any other LAMP stack or drush on your machine. Use `lando drush` to issue drush commands or log into the php container with `lando ssh`. Setting up [Lando](https://docs.lando.dev/) is beyond the scope of this document.*
 2. A **Github account**, with your Github SSH key added to your development environment so you can push and pull from Github as needed.
 3. A **Bitbucket account**, with your Bitbucket SSH key added to your development environment so you can pull from submodules hosted on Bitbucket.
 4. Read access to the following repositories:
@@ -40,6 +40,13 @@ cd uwdug
 git submodule init
 git submodule update
 ```
+
+If using Lando:
+4. Boot Lando with: `lando start`
+5. Import the database with `lando db-import <your_sql_file>`
+6. Configure the database to run locally: `lando local-conf`
+
+For other environments:
 4. Import the database. Steps will vary depending on your environment.
 5. Put the settings.php and files directory in place, under `sites/default`.
 6. Edit the database connection details in settings.php. Change settings.php back to read-only permissions when finished editing.
@@ -103,7 +110,7 @@ We use [git submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules) to 
 
 ## <a name="applying-production"></a>Applying changes to production site on depts.washington.edu
 
-A few community members have permission to update the code on the production site. If you have access to the uwdrupal user, please do not edit code there directly. Pull all the changes from the master branch of the repository. Use the following command in the public_html folder:
+A few community members have permission to update the code on the production site. If you have access to the `uwdrupal` user, please do not edit code there directly. Pull all the changes from the master branch of the repository. Use the following command in the `public_html` folder:
 
     git pull --rebase
 

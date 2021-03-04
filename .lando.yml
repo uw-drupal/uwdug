@@ -1,0 +1,27 @@
+name: uwdug
+recipe: drupal7
+config:
+  webroot: .
+
+services:
+  appserver:
+    build:
+      # Put the settings file with Lando database connection information in place.
+      - cp .lando/local.settings.php sites/default/settings.php
+
+  mail:
+    type: mailhog
+    portforward: true
+    hogfrom:
+      - appserver
+
+proxy:
+  mail:
+    - mail.lndo.site
+
+tooling:
+  local-conf:
+    service: appserver
+    description: Configures a database imported from Ovid to operate locally.
+    dir: /app
+    cmd: .lando/latest-configure-local.sh
