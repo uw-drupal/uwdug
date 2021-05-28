@@ -2,6 +2,9 @@
 
 DOMAIN='https://depts.washington.edu/uwdrupal'
 
+echo "Configure file system..."
+drush variable-set --exact file_temporary_path /tmp
+
 echo "Disable caching and asset compression..."
 drush variable-set --exact cache 0
 drush variable-set --exact block_cache 0
