@@ -6,6 +6,8 @@ config:
 services:
   appserver:
     build:
+      - git submodule init
+      - git submodule update
       # reflect the sub-path install location on the server
       - if [ ! -L uwdrupal ]; then ln -sf . uwdrupal; fi
       # Put the settings file with Lando database connection information in place.
