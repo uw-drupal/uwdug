@@ -1,5 +1,5 @@
 ***********************************************************
-Shibboleth Authetication module - Installation Instructions
+Shibboleth Authentication module - Installation Instructions
 
 Written by Tamás Dévai: tamas.devai@niif.hu
 ***********************************************************

@@ -1,7 +1,12 @@
 <?php
 
 /**
- * hook__field_info_alter()
+ * @file
+ * Drupal Shibboleth authentication profile module.
+ */
+
+/**
+ * Implements hook_field_info_alter().
  */
 function shib_auth_profile_field_info_alter(&$info) {
   foreach ($info as $key => $_dc) {
@@ -16,7 +21,7 @@ function shib_auth_profile_field_info_alter(&$info) {
 }
 
 /**
- * hook_form_FORM_ID_alter: field_ui_field_edit_form
+ * Implements hook_form_FORM_ID_alter().
  */
 function shib_auth_profile_form_field_ui_field_edit_form_alter(&$form, &$form_state) {
   $field = $form['#field'];
@@ -38,7 +43,10 @@ function shib_auth_profile_form_field_ui_field_edit_form_alter(&$form, &$form_st
       '#type' => 'textfield',
       '#title' => t('Server variable names'),
       '#default_value' => @$form['#instance']['settings']['shib_auth_profile']['server_variables'],
-      '#description' => 'Server variable names in brackets, like: <em>[eppn]</em>. Available variables: '. l('php_info', 'admin/reports/status/php/'),
+      '#description' => t(
+        'Server variable names in brackets, like: <em>[eppn]</em>. Available variables: <a href="@url">PHP Info</a>',
+        array('@url' => url('admin/reports/status/php/'))
+      ),
       '#states' => array(
         'invisible' => array(
           ':input[name="instance[settings][shib_auth_profile][mode]"]' => array('value' => ''),
@@ -49,21 +57,23 @@ function shib_auth_profile_form_field_ui_field_edit_form_alter(&$form, &$form_st
 }
 
 /**
- * hook_user_login()
+ * Implements hook_user_login().
  */
 function shib_auth_profile_user_login(&$edit, $account) {
-  if (shib_auth_session_valid()) {
+  // Update user fields as long as we have a valid session and are not
+  // masquerading.
+  if (shib_auth_session_valid() && !isset($_SESSION['masquerading']) && !isset($account->masquerading)) {
     $edit_fields = _shib_auth_update_fields('login');
     user_save($account, $edit_fields);
   }
 }
 
 /**
- * hook_user_presave()
+ * Implements hook_user_presave().
  */
 function shib_auth_profile_user_presave(&$edit, $account, $category) {
   /* Use a custom session variable to avoid a newly created user inheriting the
-     Shibboleth fields of the administrator */
+  Shibboleth fields of the administrator */
   if (!empty($_SESSION['shib_auth_register_in_progress']) && $account->is_new) {
     $edit_fields = _shib_auth_update_fields('insert');
     $edit = array_merge($edit, $edit_fields);
@@ -76,8 +86,8 @@ function shib_auth_profile_user_presave(&$edit, $account, $category) {
 function _shib_auth_update_fields($op) {
   $edit = array();
 
-  foreach(field_read_fields(array('entity_type' => 'user')) as $field_name => $field) {
-    foreach(field_read_instances(array('field_id' => $field['id'])) as $instance) {
+  foreach (field_read_fields(array('entity_type' => 'user')) as $field_name => $field) {
+    foreach (field_read_instances(array('field_id' => $field['id'])) as $instance) {
 
       $mode = (string) @$instance['settings']['shib_auth_profile']['mode'];
       $value = (string) @$instance['settings']['shib_auth_profile']['server_variables'];
@@ -90,18 +100,17 @@ function _shib_auth_update_fields($op) {
         continue;
       }
 
-      /*  Replace all [foo] occurences if "foo" is a Shibboleth attribute
-          (header, CGI environment variable) i.e. $_SERVER[foo] exists, with
-          the corresponding attribute value.
-          If the attribute doesn't exist, it will remain unmolested ("[foo]").
+      /*  Replace all [foo] occurrences if "foo" is a Shibboleth attribute
+      (header, CGI environment variable) i.e. $_SERVER[foo] exists, with
+      the corresponding attribute value.
+      If the attribute doesn't exist, it will remain unmolested ("[foo]").
 
-          Note that an attribute name may only contain [a-zA-Z0-9_-] characters.
-      */
+      Note that an attribute name may only contain [a-zA-Z0-9_-] characters.
+       */
       $replace_map = array();
-      if(preg_match_all('/\[([\w-]+)\]/', $value, $attributes))
-      {
+      if (preg_match_all('/\[([\w-]+)\]/', $value, $attributes)) {
         foreach ($attributes[1] as $a) {
-          if(shib_auth_getenv($a) != NULL) {
+          if (shib_auth_getenv($a) != NULL) {
             $replace_map['[' . $a . ']'] = shib_auth_getenv($a);
           }
         }
@@ -111,7 +120,7 @@ function _shib_auth_update_fields($op) {
         $value = str_replace(array_keys($replace_map), array_values($replace_map), $value);
       }
 
-      $edit[ $field['field_name'] ][LANGUAGE_NONE][0]['value'] = $value;
+      $edit[$field['field_name']][LANGUAGE_NONE][0]['value'] = $value;
     }
   }
 
@@ -119,14 +128,14 @@ function _shib_auth_update_fields($op) {
 }
 
 /**
- * hook_FORM_ID_alter: user_profile_form
+ * Implements hook_FORM_ID_alter().
  */
 function shib_auth_profile_form_user_profile_form_alter(&$form, &$form_state) {
-  foreach(field_read_fields(array('entity_type' => 'user')) as $field_name => $field) {
-    foreach(field_read_instances(array('field_id' => $field['id'])) as $instance) {
+  foreach (field_read_fields(array('entity_type' => 'user')) as $field_name => $field) {
+    foreach (field_read_instances(array('field_id' => $field['id'])) as $instance) {
       $mode = (string) @$instance['settings']['shib_auth_profile']['mode'];
       if ($mode == 'auto_update') {
-        $form[ $field['field_name'] ]['#disabled'] = TRUE;
+        $form[$field['field_name']]['#disabled'] = TRUE;
       }
     }
   }

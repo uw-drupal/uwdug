@@ -1,7 +1,8 @@
 <?php
+
 /**
  * @file
- *  Login URL theme.
+ * Login URL theme.
  */
 ?>
 <div id="shib_login_url">
