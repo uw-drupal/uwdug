@@ -21,6 +21,10 @@ proxy:
   mail:
     - mail.lndo.site
 
+events:
+  post-start:
+    - echo "\n\033[0;32mDon't forget the subdirectory path!\033[0m Access the running environment at \033[0;32mhttp://uwdug.lndo.site/uwdrupal\033[0m"
+
 tooling:
   local-conf:
     service: appserver

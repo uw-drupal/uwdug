@@ -1,6 +1,17 @@
 <?php
 
 /**
+ * Redirect requests to Lando into the subdirectory.
+ */
+$uri = strtolower($_SERVER['REQUEST_URI']);
+if ( $uri == '/' && (php_sapi_name() != "cli") ) {
+  echo 'https://'. $_SERVER['HTTP_HOST'] . '/uwdrupal/';
+  header('HTTP/1.0 301 Moved Permanently');
+  header('Location: http://'. $_SERVER['HTTP_HOST'] . '/uwdrupal/');
+  exit();
+}
+
+/**
  * Configure connection to Lando's database service.
  */
 $LANDO_INFO = json_decode(getenv('LANDO_INFO'), TRUE);

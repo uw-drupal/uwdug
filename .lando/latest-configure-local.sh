@@ -24,3 +24,5 @@ echo "Disabling other production-only modules"
 drush pm-disable --yes googleanalytics
 
 drush cache-clear all
+
+echo "\n\033[0;32mDon't forget the subdirectory path!\033[0m Access the running environment at \033[0;32mhttp://uwdug.lndo.site/uwdrupal\033[0m"

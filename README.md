@@ -55,6 +55,11 @@ For other environments:
 
     `drush dis googleanalytics`
 
+The running site will be accessible at:
+<http://uwdug.lndo.site/uwdrupal>
+
+Note that Lando will print URLs for the running environment, but they won't include the path `/uwdrupal` (which matches the server), so they won't work.
+
 ## <a name="working"></a>Working with the site
 
 Use drush to generate a login link for the admin user. You can change the password for your local site copy if you want. 
