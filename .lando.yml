@@ -6,6 +6,8 @@ config:
 services:
   appserver:
     build:
+      # reflect the sub-path install location on the server
+      - if [ ! -L uwdrupal ]; then ln -sf . uwdrupal; fi
       # Put the settings file with Lando database connection information in place.
       - cp .lando/local.settings.php sites/default/settings.php
 

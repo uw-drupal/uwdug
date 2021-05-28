@@ -10,5 +10,6 @@ pma
 phpMyAdmin*
 php_tmp
 
-# Ignore modules for local development
+# Ignore modules/files for local development
 sites/all/modules/stage_file_proxy
+uwdrupal
