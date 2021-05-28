@@ -17,6 +17,11 @@ $databases['default']['default'] = array(
  'prefix' => '',
 );
 
+// Set drush $base_url so e.g. user-login links work correctly.
+if (php_sapi_name() == "cli") {
+  $base_url = 'http://uwdug.lndo.site/uwdrupal';
+}
+
 /**
  * Below are default values from example.settings.php.
  */
