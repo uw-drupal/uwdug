@@ -14,6 +14,7 @@ drush pm-enable --yes stage_file_proxy
 drush variable-set stage_file_proxy_origin "$DOMAIN"
 drush variable-set stage_file_proxy_origin_dir "sites/default/files"
 drush variable-set stage_file_proxy_hotlink 1
+drush variable-set stage_file_proxy_use_imagecache_root 0
 drush variable-set preprocess_css 0
 
 echo "Disabling other production-only modules"
