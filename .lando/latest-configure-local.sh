@@ -18,3 +18,5 @@ drush variable-set preprocess_css 0
 
 echo "Disabling other production-only modules"
 drush pm-disable --yes googleanalytics
+
+drush cache-clear all
