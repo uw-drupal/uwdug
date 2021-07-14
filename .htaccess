@@ -111,7 +111,6 @@ DirectoryIndex index.php index.html index.htm
   # RewriteBase /drupal
   #
   # This line should be un-commented in production.
-  # The `git pull --rebase` command specified in README should take care of that.
   RewriteBase /uwdrupal
   #
   # If your site is running in a VirtualDocumentRoot at http://example.com/,
@@ -158,9 +157,8 @@ DirectoryIndex index.php index.html index.htm
 </IfModule>
 
 # These four lines should be un-commented in production.
-# The `git pull --rebase` command specified in README should take care of that.
 # Enable shibboleth authentication
-# AuthType Shibboleth
-# ShibRequireSession Off
-# ShibUseHeaders On
-# Require shibboleth
+AuthType Shibboleth
+ShibRequireSession Off
+ShibUseHeaders On
+Require shibboleth
