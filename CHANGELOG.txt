@@ -1,3 +1,14 @@
+Drupal 7.82, 2021-07-21
+-----------------------
+- Fixed security issues:
+   - SA-CORE-2021-004
+
+Drupal 7.81, 2021-06-02
+-----------------------
+- Block Google FLoC by default
+- Testing and accessibility enhancements
+- Various bug fixes, optimizations and improvements
+
 Drupal 7.80, 2021-04-20
 -----------------------
 - Fixed security issues:
@@ -48,12 +59,6 @@ Drupal 7.71, 2020-06-03
 -----------------------
 - Fix for jQuery Form bug in Chromium-based browsers
 - Full support for PHP 7.4
-
-Drupal 7.70, 2020-05-19
------------------------
-- Fixed security issues:
-   - SA-CORE-2020-002
-   - SA-CORE-2020-003
 
 Drupal 7.70, 2020-05-19
 -----------------------
