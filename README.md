@@ -18,7 +18,7 @@ This document explains how to get started working with the site's codebase for d
 * [Authors](#authors)
 
 ## <a name="prereqs"></a>Prerequisites
-1. A **LAMP development environment** with git and drush installed. 
+1. A **LAMP development environment** with git and drush installed.
 
     *For convenience, this project includes Lando configuration files that should work in most OS environments. If you use Lando, you do not need any other LAMP stack or drush on your machine. Use `lando drush` to issue drush commands or log into the php container with `lando ssh`. Setting up [Lando](https://docs.lando.dev/) is beyond the scope of this document.*
 2. A **Github account**, with your Github SSH key added to your development environment so you can push and pull from Github as needed.
@@ -27,7 +27,7 @@ This document explains how to get started working with the site's codebase for d
     - https://github.com/uw-drupal/uwdug
     - https://github.com/uw-drupal/uw_boundless
     - https://bitbucket.org/uwartsci/uwtrumba/
-5. A copy of the site's **database**, **settings.php** file, and **files** directory. Email [uwdrupal@uw.edu](mailto:uwdrupal@uw.edu) to request this.
+5. A copy of the site's **database**. Email [uwdrupal@uw.edu](mailto:uwdrupal@uw.edu) to request this. (If you aren't using Lando, you may also need a copy of **settings.php** and the **files**.)
 
 ## <a name="setup"></a>Setting up the site
 1. Fork the repository in your account on Github.
@@ -42,14 +42,19 @@ git submodule update
 ```
 
 If using Lando:
+
 4. Boot Lando with: `lando start`
 5. Import the database with `lando db-import <your_sql_file>`
-6. Configure the database to run locally: `lando local-conf`
+6. Configure the database to run locally: `lando local-conf`. This will enable Stage File Proxy, so you won't need local copies of the files.
 
 For other environments:
+
 4. Import the database. Steps will vary depending on your environment.
 5. Put the settings.php and files directory in place, under `sites/default`.
 6. Edit the database connection details in settings.php. Change settings.php back to read-only permissions when finished editing.
+
+For all environments:
+
 7. Visit the local site in your browser to confirm that it is running.
 8. Disable Google Analytics if the module is installed. We don't want visits to development sites included in our reports.
 
@@ -62,7 +67,7 @@ Note that Lando will print URLs for the running environment, but they won't incl
 
 ## <a name="working"></a>Working with the site
 
-Use drush to generate a login link for the admin user. You can change the password for your local site copy if you want. 
+Use drush to generate a login link for the admin user. You can change the password for your local site copy if you want.
 
     drush uli
 
