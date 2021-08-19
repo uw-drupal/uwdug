@@ -5,6 +5,8 @@ config:
 
 services:
   appserver:
+    build_as_root:
+      - .lando/fix-htaccess-file.sh
     build:
       - git submodule init
       - git submodule update
