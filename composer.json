@@ -12,10 +12,6 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
-        },
-        {
-            "type": "vcs",
-            "url": "git@bitbucket.org:uwartsci/uwtrumba.git"
         }
     ],
     "require": {
