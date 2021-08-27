@@ -1,3 +1,23 @@
+# UW Drupal Users Group Readme
+
+There's still a lot of work to do here! I've stopped short of running the migration,
+so that it can be run on any blank Drupal 9 site with all the starter modules installed.
+
+Some next steps:
+* Run the migration and start tweaking the settings; lots of things needs adjustment - menus, display modes, text formats
+* Figure out a solution for authentication
+* Import the two views, Wiki and Showcases (I've actually created them, the config is temporarily stored in .lando folder)
+* Build a Drupal 9 compatible version of the theme, or find some other decent looking theme
+* Rebuild webforms (this might not be necessary)
+* Make sure we're handling the config/sync (and other directories) in a secure way
+* Sync over any content changes since migration was run; probably easiest to do this manually than try to rerun the migration, though you can run specific migrations
+* Coordinate a launch date; add the new db, files, and a custom settings.local.php on prod
+* Make the lando stuff more elegant
+* Setup config_split
+
+# Default Drupal readme appears below
+
+
 <img alt="Drupal Logo" src="https://www.drupal.org/files/Wordmark_blue_RGB.png" height="60px">
 
 Drupal is an open source content management platform supporting a variety of
