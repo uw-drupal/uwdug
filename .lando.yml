@@ -7,10 +7,10 @@ services:
   appserver:
     build:
       ## uncomment the steps below once the Drupal code is in place
-      #- composer install
+      - composer install
       # Put the local settings file with Lando database connection information in place.
-      #- chmod 755 sites/default
-      #- cp .lando/settings.local.php sites/default/
+      - chmod 755 sites/default
+      - cp .lando/settings.local.php sites/default/
       # reflect the sub-path install location on the server
       - if [ ! -L uwdrupal ]; then ln -sf . uwdrupal; fi
 
