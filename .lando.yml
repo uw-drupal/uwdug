@@ -1,19 +1,24 @@
 name: uwdug
-recipe: drupal7
+recipe: drupal9
 config:
   webroot: .
 
 services:
   appserver:
-    build_as_root:
-      - .lando/fix-htaccess-file.sh
     build:
-      - git submodule init
-      - git submodule update
+      ## uncomment the steps below once the Drupal code is in place
+      #- composer install
+      # Put the local settings file with Lando database connection information in place.
+      #- chmod 755 sites/default
+      #- cp .lando/settings.local.php sites/default/
       # reflect the sub-path install location on the server
       - if [ ! -L uwdrupal ]; then ln -sf . uwdrupal; fi
-      # Put the settings file with Lando database connection information in place.
-      - cp .lando/local.settings.php sites/default/settings.php
+
+  database:
+    build:
+      # configure `migrate` database used in `.lando/settings.local.php`
+      - mysql -u root --execute='CREATE DATABASE IF NOT EXISTS migrate;'
+      - mysql -u root --execute="GRANT ALL ON migrate.* TO 'drupal9'@'%';"
 
   mail:
     type: mailhog
@@ -23,15 +28,15 @@ services:
 
 proxy:
   mail:
-    - mail.lndo.site
+    - mail.uwdug.lndo.site
 
 events:
   post-start:
     - echo -e "\n\033[0;32mDon't forget the subdirectory path!\033[0m Access the running environment at \033[0;32mhttp://uwdug.lndo.site/uwdrupal\033[0m"
 
 tooling:
-  local-conf:
-    service: appserver
-    description: Configures a database imported from Ovid to operate locally.
-    dir: /app
-    cmd: .lando/latest-configure-local.sh
+  db-import-source:
+    description: Imports the migration source database from source_db.sql.gz.
+    level: app
+    cmd:
+      - database: export MYSQL_DATABASE='migrate' && /helpers/sql-import.sh source_db.sql.gz && true
