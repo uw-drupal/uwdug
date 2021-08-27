@@ -1,0 +1,14 @@
+uuid: f4587d60-dd4a-45de-9925-301fdf16cd5e
+name: 'UW Drupal Users Group'
+mail: uwdrupal@uw.edu
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: yTxtFqBHnEWxQswuWvkjE8mKw2t8oKuCL1q8KnfHuGE
