@@ -9,6 +9,10 @@ sites/*/private
 pma
 phpMyAdmin*
 php_tmp
+pma_old
+.migratedb
+.old-version
+test
 
 # Ignore modules/files for local development
 sites/all/modules/stage_file_proxy
