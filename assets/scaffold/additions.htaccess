@@ -12,6 +12,7 @@
 # These four lines should be un-commented in production.
 # Enable shibboleth authentication
 AuthType Shibboleth
-ShibRequireSession Off
+ShibRequireSession On # Dev - require a shib session
+#ShibRequireSession Off # Prod - don't require a shib session
 ShibUseHeaders On
 Require shibboleth
