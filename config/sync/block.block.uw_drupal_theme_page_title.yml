@@ -1,0 +1,20 @@
+uuid: 3ee42697-59ed-4934-8581-55fbd03840fb
+langcode: en
+status: true
+dependencies:
+  theme:
+    - uw_drupal_theme
+_core:
+  default_config_hash: '-I7YwT4Y35kxSVVlo7TP1KBCcjaevtmi6wq5-Fwk37M'
+id: uw_drupal_theme_page_title
+theme: uw_drupal_theme
+region: content
+weight: -50
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }

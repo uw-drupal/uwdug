@@ -1,0 +1,22 @@
+uuid: 5cc06502-9135-4168-8525-f81bdd211384
+langcode: en
+status: true
+dependencies:
+  theme:
+    - uw_drupal_theme
+_core:
+  default_config_hash: pBwY3onws84y12peudfjYkHVRvlncpxaxAGsbl0h7uQ
+id: uw_drupal_theme_tabs
+theme: uw_drupal_theme
+region: content
+weight: -2
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility: {  }

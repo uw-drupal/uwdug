@@ -1,0 +1,22 @@
+uuid: 3c95cf6e-4292-4549-9d2e-09183581ae2d
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - uw_drupal_theme
+_core:
+  default_config_hash: EpJmx7dX08SyZp3eCKuuXBBcjlqwtwrmEctPmJ3uDZQ
+id: uw_drupal_theme_content
+theme: uw_drupal_theme
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

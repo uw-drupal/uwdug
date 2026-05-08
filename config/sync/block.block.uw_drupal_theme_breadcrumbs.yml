@@ -1,0 +1,26 @@
+uuid: d1e435ee-19b1-4b27-b068-5dd500b10b1a
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - uw_drupal_theme
+_core:
+  default_config_hash: 0tqe5B6Bvor95_kjcpsz-DRA7yg_1BDT7fMfcpyA6n0
+id: uw_drupal_theme_breadcrumbs
+theme: uw_drupal_theme
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: '<front>'

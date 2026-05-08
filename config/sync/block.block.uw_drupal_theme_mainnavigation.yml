@@ -1,0 +1,28 @@
+uuid: 196e0eff-9672-4d94-832c-46529a2a97e9
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - uw_drupal_theme
+_core:
+  default_config_hash: yShHtg2U2GhnETry1QMqufr9oMxn_Omn2iegOiSkptk
+id: uw_drupal_theme_mainnavigation
+theme: uw_drupal_theme
+region: navigation
+weight: 0
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 2
+  expand_all_items: true
+  suggestion: main__mainnavigation
+visibility: {  }
