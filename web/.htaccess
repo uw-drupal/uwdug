@@ -129,11 +129,6 @@ AddEncoding gzip svgz
   RewriteCond %{REQUEST_URI} !=/favicon.ico
   RewriteRule ^ index.php [L]
 
-  # Redirect all traffic to HTTPS
-  RewriteCond %{HTTPS} off
-  RewriteCond %{HTTP:X-Forwarded-Proto} !https
-  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
   # For security reasons, deny access to other PHP files on public sites.
   # Note: The following URI conditions are not anchored at the start (^),
   # because Drupal may be located in a subdirectory. To further improve
@@ -146,8 +141,6 @@ AddEncoding gzip svgz
   # Copy and adapt this rule to directly execute PHP files in contributed or
   # custom modules or to run another PHP application in the same directory.
   RewriteCond %{REQUEST_URI} !/core/modules/statistics/statistics\.php$
-  # Allow phpMyAdmin to run in a subdirectory within a Drupal root directory.
-  RewriteCond %{REQUEST_URI} !/phpmyadmin/.*\.php
   # Deny access to any other PHP files that do not match the rules above.
   # Specifically, disallow autoload.php from being served directly.
   RewriteRule "^(.+/.*|autoload)\.php($|/)" - [F]
@@ -191,3 +184,21 @@ AddEncoding gzip svgz
   # Disable Proxy header, since it's an attack vector.
   RequestHeader unset Proxy
 </IfModule>
+
+
+<IfModule mod_rewrite.c>
+ # Redirect all traffic to HTTPS
+  RewriteCond %{HTTPS} off
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # Allow phpMyAdmin to run in a subdirectory within a Drupal root directory.
+  RewriteCond %{REQUEST_URI} !/phpmyadmin/.*\.php
+</IfModule>
+
+# These four lines should be un-commented in production.
+# Enable shibboleth authentication
+AuthType Shibboleth
+ShibRequireSession Off
+ShibUseHeaders On
+Require shibboleth

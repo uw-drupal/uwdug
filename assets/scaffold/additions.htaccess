@@ -1,0 +1,17 @@
+
+<IfModule mod_rewrite.c>
+ # Redirect all traffic to HTTPS
+  RewriteCond %{HTTPS} off
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # Allow phpMyAdmin to run in a subdirectory within a Drupal root directory.
+  RewriteCond %{REQUEST_URI} !/phpmyadmin/.*\.php
+</IfModule>
+
+# These four lines should be un-commented in production.
+# Enable shibboleth authentication
+AuthType Shibboleth
+ShibRequireSession Off
+ShibUseHeaders On
+Require shibboleth
