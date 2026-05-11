@@ -20,6 +20,7 @@ module:
   editor: 0
   field: 0
   field_group: 0
+  field_group_migrate: 0
   field_ui: 0
   file: 0
   filter: 0
@@ -33,6 +34,9 @@ module:
   link: 0
   menu_link_content: 0
   menu_ui: 0
+  migrate: 0
+  migrate_drupal: 0
+  migrate_drupal_ui: 0
   module_filter: 0
   mysql: 0
   node: 0
@@ -40,6 +44,7 @@ module:
   page_cache: 0
   path: 0
   path_alias: 0
+  phpass: 0
   search: 0
   shortcut: 0
   system: 0
