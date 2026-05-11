@@ -918,3 +918,46 @@ $databases['default']['default'] = array (
   'autoload' => 'core/modules/mysql/src/Driver/Database/mysql/',
 );
 $settings['config_sync_directory'] = $app_root . '/../config/sync';
+
+
+/**
+ * *** MIGRATION SETTINGS ***
+ */
+
+/**
+ * File public path for migrations
+ *
+ * This file public path is required when running migrations. The migration
+ * won't work with the path set in global.settings.php. Comment out after
+ * migrations are complete.
+ *
+ * NOTE: This may be unnecessary with the new migrate_file_public_path setting,
+ * but I haven't tested it.
+ */
+// $settings['file_public_path'] = $site_path . '/files';
+$settings['migrate_source_version'] = '7';
+$settings['migrate_node_migrate_type_classic'] = TRUE;
+
+/**
+ * Migration source database connection.
+ *
+ * Replace 'source_database' with the database of the source site.
+ * Replace the 'drupal' username if necessary.
+ * Replace 'pwd' with the password.
+ * Replace 'facdbXX.s.uw.edu' with the server hosting the source database.
+ */
+
+$prod_profile = $credentials['db_profiles']['prod'];
+$databases['migrate']['default'] = [
+  'database' => 'd7_uwdrupal_dev',
+  // 'username' => $prod_profile['username'],
+  // 'password' => $prod_profile['password'],
+  // 'host' => $prod_profile['host'],
+  'username' => $default_profile['username'],
+  'password' => $default_profile['password'],
+  'host' => $default_profile['host'],
+  'prefix' => '',
+  'port' => '3306',
+  'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
+  'driver' => 'mysql',
+];
