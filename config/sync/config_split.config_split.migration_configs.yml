@@ -1,0 +1,17 @@
+uuid: fb3749b4-76dd-462c-b61d-367bd5334b75
+langcode: en
+status: true
+dependencies: {  }
+id: migration_configs
+label: 'Migration configs'
+description: 'Split off the migration configs.'
+weight: 0
+stackable: false
+no_patching: false
+storage: folder
+folder: /data/www/.d10-dug/config/migrate
+module: {  }
+theme: {  }
+complete_list:
+  - 'migrate_plus.migration*'
+partial_list: {  }

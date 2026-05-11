@@ -1,6 +1,6 @@
 # Site config and private files
 /private-files
-#/config
+/config/migrate
 
 # Derived and cache-related files
 /web/sites/default/files/css
