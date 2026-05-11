@@ -1,10 +1,9 @@
-uuid: 84f91e80-b0d2-4b8d-a868-53cf83499598
+uuid: 8ca53fd4-0934-49cc-a1a6-58b295b0762e
 langcode: en
 status: true
 dependencies:
   config:
     - filter.format.basic_html
-    - filter.format.webform_default
   module:
     - comment
     - contact
@@ -29,4 +28,3 @@ permissions:
   - 'search content'
   - 'skip comment approval'
   - 'use text format basic_html'
-  - 'use text format webform_default'

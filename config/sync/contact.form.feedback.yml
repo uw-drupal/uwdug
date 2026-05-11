@@ -1,4 +1,4 @@
-uuid: bc614e0e-4e38-41d2-89ac-92fe1dc42605
+uuid: ec3bdba9-ef16-4e31-9575-8bb35c33cc1b
 langcode: en
 status: true
 dependencies: {  }
@@ -7,7 +7,7 @@ _core:
 id: feedback
 label: 'Website feedback'
 recipients:
-  - jvogt+drupal@uw.edu
+  - jvogt+uwdrupal@uw.edu
 reply: ''
 weight: 0
 message: 'Your message has been sent.'
