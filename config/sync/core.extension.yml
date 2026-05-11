@@ -63,7 +63,6 @@ module:
   views: 10
   standard: 1000
 theme:
-  olivero: 0
   claro: 0
   gin: 0
   uw_drupal_theme: 0
