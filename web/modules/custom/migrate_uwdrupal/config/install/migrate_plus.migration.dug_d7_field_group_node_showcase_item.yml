@@ -1,0 +1,63 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - migrate_uwdrupal
+id: dug_d7_field_group_node_showcase_item
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Configuration
+  - config
+  - field
+migration_group: dug
+label: 'Field groups of node (bundle: showcase_item_)'
+source:
+  plugin: d7_field_group
+  entity_type: node
+  bundle: showcase_item_
+  constants:
+    destination_bundle: showcase_item
+process:
+  entity_type:
+    -
+      plugin: get
+      source: entity_type
+  bundle:
+    -
+      plugin: get
+      source: contants/destination_bundle
+      # source: bundle
+  mode:
+    -
+      plugin: static_map
+      source: mode
+      bypass: true
+      map:
+        form: default
+  type:
+    -
+      plugin: static_map
+      source: mode
+      default_value: entity_view_display
+      map:
+        form: entity_form_display
+  group_name:
+    -
+      plugin: get
+      source: group_name
+  settings:
+    -
+      plugin: get
+      source: settings
+destination:
+  plugin: d7_field_group
+idMap: {  }
+migration_dependencies:
+  required:
+    - dug_d7_view_modes
+  optional: {  }
+include: null

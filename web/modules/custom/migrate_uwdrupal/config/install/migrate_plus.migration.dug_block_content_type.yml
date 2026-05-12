@@ -1,0 +1,45 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - migrate_uwdrupal
+id: dug_block_content_type
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 6'
+  - 'Drupal 7'
+  - Configuration
+  - config
+migration_group: dug
+label: 'Block content type'
+# Rollback: doesn't roll back any changes it made to previously existing block
+# content types.
+source:
+  plugin: embedded_data
+  data_rows:
+    -
+      id: basic
+      label: 'Basic block'
+  ids:
+    id:
+      type: string
+  source_module: block
+process:
+  id:
+    -
+      plugin: get
+      source: id
+  label:
+    -
+      plugin: get
+      source: label
+destination:
+  plugin: 'entity:block_content_type'
+idMap: {  }
+migration_dependencies:
+  required: {  }
+  optional: {  }
+include: null

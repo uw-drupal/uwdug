@@ -1,0 +1,54 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - migrate_uwdrupal
+id: dug_d7_custom_block
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+  - content
+migration_group: dug
+label: 'Content blocks'
+source:
+  plugin: d7_block_custom
+process:
+  id:
+    -
+      plugin: get
+      source: bid
+  info:
+    -
+      plugin: get
+      source: info
+  body/format:
+    # -
+    #   plugin: migration_lookup
+    #   migration: dug_d7_filter_format
+    #   source: format
+    -
+      plugin: static_map
+      bypass: true
+      source: format
+      map:
+        limited_html: basic_html
+  body/value:
+    -
+      plugin: get
+      source: body
+destination:
+  plugin: 'entity:block_content'
+  default_bundle: basic
+  no_stub: true
+idMap: {  }
+migration_dependencies:
+  required:
+    # - dug_d7_filter_format
+    - dug_block_content_body_field
+  optional: {  }
+    # - dug_d7_filter_format
+include: null
