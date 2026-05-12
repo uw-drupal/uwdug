@@ -1,0 +1,16 @@
+uuid: 1e0b7762-6458-4662-9d34-b6040570c152
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    parent: 'main:'
+name: 'Showcase Item'
+type: showcase_item
+description: 'A site selected by the community to showcase the range and capabilities of Drupal.'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: false

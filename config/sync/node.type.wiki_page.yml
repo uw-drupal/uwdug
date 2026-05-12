@@ -1,0 +1,16 @@
+uuid: 93050810-336b-45e6-88e4-6b68022a80e0
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    parent: 'main:'
+name: 'Wiki page'
+type: wiki_page
+description: 'Anyone at UW can add or edit a wiki page. We use these for knowledge sharing and community content.'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: false

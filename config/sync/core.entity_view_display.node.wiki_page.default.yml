@@ -1,0 +1,28 @@
+uuid: 77d027d2-452b-4f80-996b-372efaa7585e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.wiki_page.body
+    - node.type.wiki_page
+  module:
+    - text
+    - user
+id: node.wiki_page.default
+targetEntityType: node
+bundle: wiki_page
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

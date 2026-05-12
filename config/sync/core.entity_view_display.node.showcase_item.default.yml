@@ -1,0 +1,28 @@
+uuid: 198efaa3-96e9-4855-8a4b-8ffad697f6d3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.showcase_item.body
+    - node.type.showcase_item
+  module:
+    - text
+    - user
+id: node.showcase_item.default
+targetEntityType: node
+bundle: showcase_item
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }
