@@ -26,9 +26,9 @@ front_page_slant_color: '#ffffff'
 front_page_slogan_color: '#ffffff'
 text_shadow_black: '1px 1px 3px rgba(0, 0, 0, 0.5)'
 text_shadow_white: '1px 1px 3px rgba(255, 255, 255, 0.5)'
-sidebar_menu_visibility: 1
+sidebar_menu_visibility: '1'
 top_links_to_dropdowns: 0
-login_url: /user/login
+login_url: /uwdrupal/user/login
 search_toggle_option: site
 input_radio: custom
 input_checkbox: switch
@@ -39,3 +39,16 @@ button_size: ''
 button_outline: 0
 fluid_container: 1
 image_fluid: 0
+features:
+  node_user_picture: 1
+  comment_user_picture: true
+  comment_user_verification: true
+  favicon: 1
+logo:
+  use_default: 1
+favicon:
+  use_default: 1
+hero_image_front_upload: {  }
+hero_image_front_mobile_upload: {  }
+hero_image_other_upload: {  }
+hero_image_other_mobile_upload: {  }

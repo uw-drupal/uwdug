@@ -1,6 +1,6 @@
 uuid: dfe81e99-c8cc-4e33-9f32-c17f099ba98f
 langcode: en
-status: false
+status: true
 dependencies:
   module:
     - shibboleth
