@@ -14,6 +14,7 @@ migration_tags:
   - config
 migration_group: dug
 label: 'Node type configuration'
+# Rollback: deletes node types it created. Doesn't undo changes to other node types.
 source:
   plugin: d7_node_type
   constants:
@@ -24,9 +25,16 @@ process:
     #   plugin: get
     #   source: type
     -
+      plugin: skip_on_value
+      source: type
+      equals: true
+      value:
+        - 'webform'
+      method: row
+      message: 'Skipped webform node type.'
+    -
       plugin: static_map
       bypass: true
-      source: type
       map:
         showcase_item_: showcase_item
   name:

@@ -20,6 +20,7 @@ source:
   constants:
     status: true
     comment_node: comment_node_
+    translatable: true
 process:
   type:
     -
@@ -27,9 +28,17 @@ process:
       source: type
       method: getFieldType
   entity_type:
+    # -
+    #   plugin: get
+    #   source: entity_type
     -
-      plugin: get
+      plugin: skip_on_value
       source: entity_type
+      equals: true
+      value:
+        - 'entityform'
+      method: row
+      message: 'Skipped entityform fields.'
   field_name:
     -
       plugin: get
@@ -41,6 +50,7 @@ process:
       bypass: true
       map:
         comment_node_forum: comment_forum
+        showcase_item_: showcase_item
   _comment_type:
     -
       plugin: explode
@@ -108,7 +118,8 @@ process:
   translatable:
     -
       plugin: get
-      source: translatable
+      source: constants/translatable
+      # source: translatable
   settings/title:
     -
       plugin: static_map

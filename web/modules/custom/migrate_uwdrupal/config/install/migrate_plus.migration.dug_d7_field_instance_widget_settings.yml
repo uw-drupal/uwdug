@@ -37,6 +37,19 @@ process:
       method: row
   bundle:
     -
+      plugin: skip_on_value
+      source: bundle
+      equals: true
+      value:
+        - 'entityform'
+      method: row
+      message: 'Skipped entityform fields.'
+    -
+      plugin: static_map
+      bypass: true
+      map:
+        showcase_item_: showcase_item
+    -
       plugin: migration_lookup
       migration: dug_d7_field_instance
       source:

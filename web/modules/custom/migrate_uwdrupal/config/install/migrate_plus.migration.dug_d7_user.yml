@@ -30,6 +30,7 @@ process:
       method: row
       value:
         - 1 # uwdrupal (1)
+  shibboleth_authname: shibboleth_authname
   name:
     -
       plugin: get

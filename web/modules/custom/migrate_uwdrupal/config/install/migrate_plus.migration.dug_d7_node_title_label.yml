@@ -36,9 +36,22 @@ process:
       plugin: get
       source: constants/entity_type
   bundle:
+    # -
+    #   plugin: get
+    #   source: type
     -
-      plugin: get
+      plugin: skip_on_value
       source: type
+      equals: true
+      value:
+        - 'webform'
+      method: row
+      message: 'Skipped webform node type.'
+    -
+      plugin: static_map
+      bypass: true
+      map:
+        showcase_item_: showcase_item
   field_name:
     -
       plugin: get

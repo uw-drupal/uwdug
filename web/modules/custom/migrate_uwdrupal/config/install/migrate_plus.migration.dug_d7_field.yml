@@ -19,12 +19,20 @@ source:
   plugin: d7_field
   constants:
     status: true
-    langcode: und
+    langcode: en
 process:
   entity_type:
+    # -
+    #   plugin: get
+    #   source: entity_type
     -
-      plugin: get
+      plugin: skip_on_value
       source: entity_type
+      equals: true
+      value:
+        - 'entityform'
+      method: row
+      message: 'Skipped entityform fields.'
   status:
     -
       plugin: get
@@ -34,9 +42,17 @@ process:
       plugin: get
       source: constants/langcode
   field_name:
+    # -
+    #   plugin: get
+    #   source: field_name
     -
-      plugin: get
+      plugin: skip_on_value
       source: field_name
+      equals: true
+      value:
+        - 'field_image'
+      method: row
+      message: 'Skipped field_image.'
   type:
     -
       plugin: process_field

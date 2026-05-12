@@ -15,6 +15,7 @@ migration_tags:
   - vocabs
 migration_group: dug
 label: 'Taxonomy vocabularies'
+# Rollback: deletes vocabularies it created. No changes to other vocabs.
 source:
   plugin: d7_taxonomy_vocabulary
 process:

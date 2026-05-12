@@ -38,19 +38,38 @@ process:
     -
       plugin: get
       source: entity_type
+  # bundle_mapped:
+  #   -
+  #     plugin: static_map
+  #     source: bundle
+  #     bypass: true
+  #     map:
+  #       showcase_item_: showcase_item
   bundle:
+    # -
+    #   plugin: migration_lookup
+    #   migration: dug_d7_field_instance
+    #   source:
+    #     - entity_type
+    #     # - bundle
+    #     - '@bundle_mapped'
+    #     - field_name
+    # -
+    #   plugin: extract
+    #   index:
+    #     - 1
     -
-      plugin: migration_lookup
-      migration: dug_d7_field_instance
-      source:
-        - entity_type
-        - bundle
-        - field_name
-    -
-      plugin: extract
-      index:
-        - 1
+      plugin: static_map
+      source: bundle
+      bypass: true
+      map:
+        showcase_item_: showcase_item
   view_mode:
+    # -
+    #   plugin: static_map
+    #   bypass: true
+    #   map:
+    #     full: default
     -
       plugin: migration_lookup
       migration: dug_d7_view_modes
@@ -162,5 +181,5 @@ migration_dependencies:
   optional:
     - dug_d7_field
     - dug_d7_field_instance
-    - dug_d7_view_modes
+    # - dug_d7_view_modes
 include: null

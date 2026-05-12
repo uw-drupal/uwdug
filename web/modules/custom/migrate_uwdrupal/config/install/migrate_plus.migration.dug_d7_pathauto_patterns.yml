@@ -15,7 +15,7 @@ migration_tags:
   - pathauto
 migration_group: dug
 label: 'Pathauto patterns'
-# Rollback: does delete pathauto_patterns that it created.
+# Rollback: deletes pathauto_patterns that it created.
 source:
   plugin: pathauto_pattern
   constants:
@@ -57,6 +57,7 @@ migration_dependencies:
   # required: {  }
   required:
     - dug_d7_node_type
+    # - dug_d7_taxonomy_vocabulary
   optional: {  }
     # - dug_d7_node_type
 include: null
