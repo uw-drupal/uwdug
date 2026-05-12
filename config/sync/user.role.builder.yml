@@ -1,0 +1,96 @@
+uuid: b1407ff3-f0e0-4cbd-82e7-69aac619b386
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.full_html
+    - filter.format.webform_default
+  module:
+    - announcements_feed
+    - asset_injector
+    - block
+    - block_content
+    - contact
+    - contextual
+    - field_ui
+    - file
+    - filter
+    - help
+    - image
+    - layout_builder
+    - node
+    - path
+    - pathauto
+    - search
+    - shortcut
+    - system
+    - taxonomy
+    - toolbar
+    - views_ui
+    - webform
+id: builder
+label: Builder
+weight: -7
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access announcements'
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access files overview'
+  - 'access help pages'
+  - 'access site in maintenance mode'
+  - 'access site reports'
+  - 'access toolbar'
+  - 'administer actions'
+  - 'administer block content'
+  - 'administer block types'
+  - 'administer block_content display'
+  - 'administer block_content fields'
+  - 'administer block_content form display'
+  - 'administer blocks'
+  - 'administer contact forms'
+  - 'administer contact_message display'
+  - 'administer contact_message fields'
+  - 'administer contact_message form display'
+  - 'administer content types'
+  - 'administer css assets injector'
+  - 'administer display modes'
+  - 'administer image styles'
+  - 'administer js assets injector'
+  - 'administer menu'
+  - 'administer node display'
+  - 'administer node fields'
+  - 'administer node form display'
+  - 'administer nodes'
+  - 'administer pathauto'
+  - 'administer search'
+  - 'administer shortcuts'
+  - 'administer taxonomy'
+  - 'administer taxonomy_term display'
+  - 'administer taxonomy_term fields'
+  - 'administer taxonomy_term form display'
+  - 'administer themes'
+  - 'administer url aliases'
+  - 'administer user display'
+  - 'administer user fields'
+  - 'administer user form display'
+  - 'administer views'
+  - 'administer webform'
+  - 'bulk delete aliases'
+  - 'bulk update aliases'
+  - 'bypass node access'
+  - 'configure any layout'
+  - 'create and edit custom blocks'
+  - 'create url aliases'
+  - 'customize shortcut links'
+  - 'delete any file'
+  - 'edit own webform submission'
+  - 'link to any page'
+  - 'notify of path changes'
+  - 'switch shortcut sets'
+  - 'use text format full_html'
+  - 'use text format webform_default'
+  - 'view any webform submission'
+  - 'view own unpublished content'
+  - 'view the administration theme'

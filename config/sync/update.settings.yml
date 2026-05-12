@@ -2,12 +2,15 @@ _core:
   default_config_hash: xbYr66-g0FjNgVBkGypCuN46vBI2XHntXN1URawq1s4
 check:
   disabled_extensions: false
-  interval_days: 1
+  interval_days: 7
 fetch:
   url: null
   max_attempts: 2
   timeout: 30
 notification:
   emails:
-    - jvogt+uwdrupal@uw.edu
-  threshold: all
+    - jvogt@uw.edu
+    - '#druliner@uw.edu'
+    - '#akrikawa@uw.edu'
+    - '#pkeyes@uw.edu'
+  threshold: security

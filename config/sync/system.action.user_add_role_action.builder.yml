@@ -1,0 +1,14 @@
+uuid: 364bb196-7275-48f9-bdb9-8777f4752d19
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.builder
+  module:
+    - user
+id: user_add_role_action.builder
+label: 'Add the Builder role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: builder

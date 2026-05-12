@@ -4,7 +4,7 @@ langcode: en
 uuid: 49725a3a-038d-404d-8a7d-b6ddde9e36a4
 name: 'UW Drupal Users Group'
 mail: jvogt+drupal@uw.edu
-slogan: ''
+slogan: 'We use Drupal to build web sites and applications at the University of Washington. New members always welcome.'
 page:
   403: ''
   404: ''
@@ -12,4 +12,4 @@ page:
 admin_compact_mode: false
 weight_select_max: 100
 default_langcode: en
-mail_notification: null
+mail_notification: ''

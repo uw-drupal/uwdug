@@ -1,0 +1,22 @@
+uuid: 0863df21-ddae-4b62-9485-754ef49198cb
+langcode: en
+status: true
+dependencies:
+  module:
+    - contextual
+    - help
+    - node
+    - system
+    - toolbar
+    - views_ui
+id: contributor
+label: Contributor
+weight: -9
+is_admin: null
+permissions:
+  - 'access contextual links'
+  - 'access help pages'
+  - 'access toolbar'
+  - 'administer views'
+  - 'view own unpublished content'
+  - 'view the administration theme'

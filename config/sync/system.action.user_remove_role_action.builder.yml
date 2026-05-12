@@ -1,0 +1,14 @@
+uuid: e7b72a0b-f903-4f2f-bac1-a375fb9e8fc7
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.builder
+  module:
+    - user
+id: user_remove_role_action.builder
+label: 'Remove the Builder role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: builder
