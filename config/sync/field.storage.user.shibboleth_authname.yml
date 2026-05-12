@@ -1,0 +1,26 @@
+uuid: 6769af1d-787a-4c26-9f5e-59c9891e43cd
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+  enforced:
+    module:
+      - shibboleth
+_core:
+  default_config_hash: 2hNUQxGrO6usKDW9m-k8rEhKpO5W4uS1RNhIjBtpdUU
+id: user.shibboleth_authname
+field_name: shibboleth_authname
+entity_type: user
+type: string
+settings:
+  max_length: 25
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

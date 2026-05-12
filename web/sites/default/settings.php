@@ -89,6 +89,51 @@
  * @endcode
  */
 $databases = [];
+/**
+ * Database credentials
+ *
+ * The database credentials are stored separately so that they aren't committed
+ * to version control.
+ */
+if (file_exists( $app_root . '/../private-files/credentials.php')) {
+  include $app_root . '/../private-files/credentials.php';
+}
+$default_profile = $credentials['db_profiles']['dev'];
+$databases['default']['default'] = array (
+  'database' => 'd10_uwdrupal_dev',
+  'username' => $default_profile['username'],
+  'password' => $default_profile['password'],
+  'prefix' => '',
+  'host' => $default_profile['host'],
+  'port' => '3306',
+  'isolation_level' => '',
+  'driver' => 'mysql',
+  'namespace' => 'Drupal\\mysql\\Driver\\Database\\mysql',
+  'autoload' => 'core/modules/mysql/src/Driver/Database/mysql/',
+);
+/**
+ * Migration source database connection.
+ *
+ * Replace 'source_database' with the database of the source site.
+ * Replace the 'drupal' username if necessary.
+ * Replace 'pwd' with the password.
+ * Replace 'facdbXX.s.uw.edu' with the server hosting the source database.
+ */
+
+// $prod_profile = $credentials['db_profiles']['prod'];
+$databases['migrate']['default'] = [
+  'database' => 'd7_uwdrupal_dev',
+  // 'username' => $prod_profile['username'],
+  // 'password' => $prod_profile['password'],
+  // 'host' => $prod_profile['host'],
+  'username' => $default_profile['username'],
+  'password' => $default_profile['password'],
+  'host' => $default_profile['host'],
+  'prefix' => '',
+  'port' => '3306',
+  'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
+  'driver' => 'mysql',
+];
 
 /**
  * Customizing database settings.
@@ -257,6 +302,7 @@ $databases = [];
  * its location.
  */
 # $settings['config_sync_directory'] = '/directory/outside/webroot';
+$settings['config_sync_directory'] = $app_root . '/../config/sync';
 
 /**
  * Settings:
@@ -611,6 +657,8 @@ $settings['update_free_access'] = FALSE;
  * about securing private files.
  */
 # $settings['file_private_path'] = '';
+$settings['file_private_path'] = $app_root . '/../private-files';
+// $settings['file_private_path'] = '../private-files';
 
 /**
  * Temporary file path:
@@ -624,6 +672,7 @@ $settings['update_free_access'] = FALSE;
  * @see \Drupal\Component\FileSystem\FileSystem::getOsTemporaryDirectory()
  */
 # $settings['file_temp_path'] = '/tmp';
+$settings['file_temp_path'] = '/data/tmp'; # For Jeanna's facweb servers.
 
 /**
  * Session write interval:
@@ -872,10 +921,10 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
  * $settings['migrate_file_private_path'] = '/var/www/drupal7';
  * @endcode
  */
-# $settings['migrate_source_connection'] = '';
-# $settings['migrate_source_version'] = '';
-# $settings['migrate_file_public_path'] = '';
-# $settings['migrate_file_private_path'] = '';
+$settings['migrate_source_connection'] = 'migrate';
+$settings['migrate_source_version'] = '7';
+$settings['migrate_file_public_path'] = '/data/www/facweb23.s.uw.edu/uwdrupal-d7';
+// $settings['migrate_file_private_path'] = '';
 
 /**
  * Load local development override configuration, if available.
@@ -895,69 +944,20 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
 #   include $app_root . '/' . $site_path . '/settings.local.php';
 # }
 
-/**
- * Database credentials
+/*
+ * Shibboleth settings
  *
- * The database credentials are stored separately so that they aren't committed
- * to version control.
- */
-if (file_exists( $app_root . '/../private-files/credentials.php')) {
-  include $app_root . '/../private-files/credentials.php';
-}
-$default_profile = $credentials['db_profiles']['dev'];
-$databases['default']['default'] = array (
-  'database' => 'd10_uwdrupal_dev',
-  'username' => $default_profile['username'],
-  'password' => $default_profile['password'],
-  'prefix' => '',
-  'host' => $default_profile['host'],
-  'port' => '3306',
-  'isolation_level' => '',
-  'driver' => 'mysql',
-  'namespace' => 'Drupal\\mysql\\Driver\\Database\\mysql',
-  'autoload' => 'core/modules/mysql/src/Driver/Database/mysql/',
-);
-$settings['config_sync_directory'] = $app_root . '/../config/sync';
-
-
-/**
- * *** MIGRATION SETTINGS ***
- */
-
-/**
- * File public path for migrations
+ * Use the domain (hostname) rather than the full path. For example,
+ * https://facilities.uw.edu AND any sub-sites (e.g.
+ * https://facilities.uw.edu/blog) use https://facilities.uw.edu.
  *
- * This file public path is required when running migrations. The migration
- * won't work with the path set in global.settings.php. Comment out after
- * migrations are complete.
- *
- * NOTE: This may be unnecessary with the new migrate_file_public_path setting,
- * but I haven't tested it.
+ * *** Troubleshooting ***
+ * The domain must be bound to the server as an ACS in the Service Provider
+ * Registry (https://iam-tools.u.washington.edu/spreg). Contact UW-IT at
+ * help@uw.edu for assistance and additional info.
  */
-// $settings['file_public_path'] = $site_path . '/files';
-$settings['migrate_source_version'] = '7';
-$settings['migrate_node_migrate_type_classic'] = TRUE;
+// $shib_domain = 'https://' . gethostname() . '.s.uw.edu';
+$shib_domain = 'https://facweb23.s.uw.edu';
+$config['shibboleth.settings']['shibboleth_login_handler_url'] = $shib_domain . '/Shibboleth.sso/Login';
+$config['shibboleth.settings']['shibboleth_logout_handler_url'] = $shib_domain . '/Shibboleth.sso/Logout';
 
-/**
- * Migration source database connection.
- *
- * Replace 'source_database' with the database of the source site.
- * Replace the 'drupal' username if necessary.
- * Replace 'pwd' with the password.
- * Replace 'facdbXX.s.uw.edu' with the server hosting the source database.
- */
-
-$prod_profile = $credentials['db_profiles']['prod'];
-$databases['migrate']['default'] = [
-  'database' => 'd7_uwdrupal_dev',
-  // 'username' => $prod_profile['username'],
-  // 'password' => $prod_profile['password'],
-  // 'host' => $prod_profile['host'],
-  'username' => $default_profile['username'],
-  'password' => $default_profile['password'],
-  'host' => $default_profile['host'],
-  'prefix' => '',
-  'port' => '3306',
-  'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
-  'driver' => 'mysql',
-];

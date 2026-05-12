@@ -1,0 +1,30 @@
+uuid: dfe81e99-c8cc-4e33-9f32-c17f099ba98f
+langcode: en
+status: false
+dependencies:
+  module:
+    - shibboleth
+    - user
+  theme:
+    - uw_drupal_theme
+id: uw_drupal_theme_shibbolethloginblock
+theme: uw_drupal_theme
+region: uwfooter
+weight: 0
+provider: null
+plugin: shibboleth_login_block
+settings:
+  id: shibboleth_login_block
+  label: 'Shibboleth login block'
+  label_display: '0'
+  provider: shibboleth
+  login_link_classes: ''
+  logout_link_classes: ''
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      anonymous: anonymous
