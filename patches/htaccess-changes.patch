@@ -1,0 +1,36 @@
+diff --git a/web/.htaccess b/web/.htaccess
+index 4031da475..904b4cb23 100644
+--- a/web/.htaccess
++++ b/web/.htaccess
+@@ -124,11 +124,20 @@ AddEncoding gzip svgz
+ 
+   # Pass all requests not referring directly to files in the filesystem to
+   # index.php.
++  RewriteCond %{REQUEST_URI} !^/Shibboleth.sso/(.*)$
+   RewriteCond %{REQUEST_FILENAME} !-f
+   RewriteCond %{REQUEST_FILENAME} !-d
+   RewriteCond %{REQUEST_URI} !=/favicon.ico
+   RewriteRule ^ index.php [L]
+ 
++ # Redirect all traffic to HTTPS
++  RewriteCond %{HTTPS} off
++  RewriteCond %{HTTP:X-Forwarded-Proto} !https
++  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
++
++  # Allow phpMyAdmin to run in a subdirectory within a Drupal root directory.
++  RewriteCond %{REQUEST_URI} !/phpmyadmin/.*\.php
++
+   # For security reasons, deny access to other PHP files on public sites.
+   # Note: The following URI conditions are not anchored at the start (^),
+   # because Drupal may be located in a subdirectory. To further improve
+@@ -184,3 +193,10 @@ AddEncoding gzip svgz
+   # Disable Proxy header, since it's an attack vector.
+   RequestHeader unset Proxy
+ </IfModule>
++
++# Enable shibboleth authentication
++AuthType Shibboleth
++#ShibRequireSession On # Optional. Uncomment to protect whole site behind login.
++ShibRequireSession Off # Don't require a session. Comment out if above line is uncommented.
++ShibUseHeaders On
++Require shibboleth

@@ -52,15 +52,15 @@
         },
         "sort-packages": true
     },
+    "scripts": {
+      "post-drupal-scaffold-cmd": [
+        "patch -p1 < patches/htaccess-changes.patch"
+      ]
+    },
     "extra": {
         "drupal-scaffold": {
             "locations": {
                 "web-root": "web/"
-            },
-            "file-mapping": {
-              "[web-root]/.htaccess": {
-                "append": "assets/scaffold/additions.htaccess"
-              }
             }
         },
         "installer-paths": {
