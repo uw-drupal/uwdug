@@ -1,0 +1,23 @@
+uuid: 440865b4-b52e-424b-a59a-f5c1bbcaa6bd
+langcode: en
+status: true
+dependencies: {  }
+name: screenshot_small
+label: 'Small Screenshot'
+effects:
+  1c321796-a88b-4c17-a340-910ec7fbfc21:
+    uuid: 1c321796-a88b-4c17-a340-910ec7fbfc21
+    id: image_scale
+    weight: 1
+    data:
+      width: 300
+      height: null
+      upscale: false
+  d1b90b64-ef97-4acd-823c-500ba0d5be77:
+    uuid: d1b90b64-ef97-4acd-823c-500ba0d5be77
+    id: image_crop
+    weight: 2
+    data:
+      width: 300
+      height: 282
+      anchor: center-top

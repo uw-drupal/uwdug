@@ -1,0 +1,23 @@
+uuid: d57629b9-c0aa-4cfb-aa58-505d69bba249
+langcode: en
+status: true
+dependencies: {  }
+name: screenshot
+label: 'Large Screenshot'
+effects:
+  01010a96-30f6-44d3-96dd-37f2d93f020e:
+    uuid: 01010a96-30f6-44d3-96dd-37f2d93f020e
+    id: image_crop
+    weight: -9
+    data:
+      width: 420
+      height: 504
+      anchor: center-top
+  107b0bc6-4db1-4213-a842-18cd3ca86108:
+    uuid: 107b0bc6-4db1-4213-a842-18cd3ca86108
+    id: image_scale
+    weight: -10
+    data:
+      width: 420
+      height: null
+      upscale: false
