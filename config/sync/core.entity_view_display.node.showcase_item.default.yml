@@ -4,6 +4,13 @@ status: true
 dependencies:
   config:
     - field.field.node.showcase_item.body
+    - field.field.node.showcase_item.field_audience
+    - field.field.node.showcase_item.field_base_theme
+    - field.field.node.showcase_item.field_drupal_version
+    - field.field.node.showcase_item.field_image
+    - field.field.node.showcase_item.field_organization_description
+    - field.field.node.showcase_item.field_site_type
+    - field.field.node.showcase_item.field_url
     - node.type.showcase_item
   module:
     - text
@@ -25,4 +32,11 @@ content:
     third_party_settings: {  }
     weight: 100
     region: content
-hidden: {  }
+hidden:
+  field_audience: true
+  field_base_theme: true
+  field_drupal_version: true
+  field_image: true
+  field_organization_description: true
+  field_site_type: true
+  field_url: true

@@ -1,0 +1,26 @@
+uuid: e8844387-30a9-4ee8-a014-572863a17cdd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_drupal_version
+    - node.type.wiki_page
+    - taxonomy.vocabulary.drupal_versions
+id: node.wiki_page.field_drupal_version
+field_name: field_drupal_version
+entity_type: node
+bundle: wiki_page
+label: 'Drupal Version'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      drupal_versions: drupal_versions
+    sort:
+      field: _none
+field_type: entity_reference

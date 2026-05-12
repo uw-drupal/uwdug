@@ -1,19 +1,17 @@
-uuid: 48aba83c-dc43-4c31-88bf-6c02555b900d
+uuid: ab77381a-0349-4ae1-9436-44f1e72abe5e
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_tags
-    - node.type.article
+    - node.type.wiki_page
     - taxonomy.vocabulary.tags
-_core:
-  default_config_hash: QdUgf_beeoaPiyKorFv0q1fcJpWH_uZTqe_xoVJacrw
-id: node.article.field_tags
+id: node.wiki_page.field_tags
 field_name: field_tags
 entity_type: node
-bundle: article
+bundle: wiki_page
 label: Tags
-description: 'Enter a comma-separated list of words to describe your content.'
+description: ''
 required: false
 translatable: true
 default_value: {  }

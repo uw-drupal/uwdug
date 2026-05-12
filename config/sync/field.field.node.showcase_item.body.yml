@@ -12,7 +12,7 @@ field_name: body
 entity_type: node
 bundle: showcase_item
 label: 'Site Overview'
-description: ''
+description: "Provide a brief description of the site's purpose and distinctive features. Ideas to mention: tools and services offered, frequently visited pages, number of monthly visitors, Drupal modules used, integrations with other services, partnerships with vendors."
 required: false
 translatable: true
 default_value: {  }

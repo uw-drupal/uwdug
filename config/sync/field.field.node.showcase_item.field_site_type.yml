@@ -1,0 +1,26 @@
+uuid: e157fab7-cd5b-4ae2-a3df-4cc998cd9321
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_site_type
+    - node.type.showcase_item
+    - taxonomy.vocabulary.type
+id: node.showcase_item.field_site_type
+field_name: field_site_type
+entity_type: node
+bundle: showcase_item
+label: 'Type of Site'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      type: type
+    sort:
+      field: _none
+field_type: entity_reference

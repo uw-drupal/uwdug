@@ -1,0 +1,26 @@
+uuid: eb42ba62-7657-4a4e-b4a3-6d5f742c6a8e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_base_theme
+    - node.type.showcase_item
+    - taxonomy.vocabulary.base_themes
+id: node.showcase_item.field_base_theme
+field_name: field_base_theme
+entity_type: node
+bundle: showcase_item
+label: 'Base Theme'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      base_themes: base_themes
+    sort:
+      field: _none
+field_type: entity_reference

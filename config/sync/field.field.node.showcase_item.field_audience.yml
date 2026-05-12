@@ -1,0 +1,26 @@
+uuid: 7379d8c4-05e4-4d06-8fdd-9e3a26dff7f3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_audience
+    - node.type.showcase_item
+    - taxonomy.vocabulary.audiences
+id: node.showcase_item.field_audience
+field_name: field_audience
+entity_type: node
+bundle: showcase_item
+label: 'Primary Audience'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      audiences: audiences
+    sort:
+      field: _none
+field_type: entity_reference

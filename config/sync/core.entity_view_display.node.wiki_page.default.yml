@@ -4,6 +4,10 @@ status: true
 dependencies:
   config:
     - field.field.node.wiki_page.body
+    - field.field.node.wiki_page.field_drupal_version
+    - field.field.node.wiki_page.field_file
+    - field.field.node.wiki_page.field_image
+    - field.field.node.wiki_page.field_tags
     - node.type.wiki_page
   module:
     - text
@@ -25,4 +29,8 @@ content:
     third_party_settings: {  }
     weight: 100
     region: content
-hidden: {  }
+hidden:
+  field_drupal_version: true
+  field_file: true
+  field_image: true
+  field_tags: true
