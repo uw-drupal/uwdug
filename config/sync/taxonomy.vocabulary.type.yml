@@ -1,0 +1,9 @@
+uuid: 1c15e7a7-a81d-4e6a-a04d-54019a3358bb
+langcode: en
+status: true
+dependencies: {  }
+name: 'Site Types'
+vid: type
+description: 'Type of site'
+weight: 0
+new_revision: false

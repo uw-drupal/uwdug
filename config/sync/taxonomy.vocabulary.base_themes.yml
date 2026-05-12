@@ -1,0 +1,9 @@
+uuid: d65bb8e6-1209-45af-9508-7487ca6c558a
+langcode: en
+status: true
+dependencies: {  }
+name: 'Base Themes'
+vid: base_themes
+description: 'Themes used as foundation for custom Drupal themes.'
+weight: 0
+new_revision: false

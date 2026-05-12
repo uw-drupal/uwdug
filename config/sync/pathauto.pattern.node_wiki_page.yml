@@ -1,0 +1,23 @@
+uuid: 31e2c324-01f9-429b-bad9-53959f335444
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.wiki_page
+  module:
+    - node
+id: node_wiki_page
+label: 'Content - Wiki page'
+type: 'canonical_entities:node'
+pattern: '/wiki/[node:title]'
+selection_criteria:
+  -
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: node
+    bundles:
+      wiki_page: wiki_page
+selection_logic: and
+weight: -9
+relationships: {  }
