@@ -9,7 +9,12 @@ dependencies:
     - taxonomy.vocabulary.audiences
     - taxonomy.vocabulary.base_themes
     - taxonomy.vocabulary.drupal_versions
+  content:
+    - 'taxonomy_term:drupal_versions:0c5d0114-e0d4-4833-b8e5-7b7c96069439'
+    - 'taxonomy_term:drupal_versions:0dc83562-bb81-436f-8973-517d268cd071'
+    - 'taxonomy_term:drupal_versions:40b79619-2eb0-48d6-99cc-547c57e2af37'
   module:
+    - better_exposed_filters
     - image
     - node
     - taxonomy
@@ -166,7 +171,7 @@ display:
           offset: 0
           items_per_page: null
       exposed_form:
-        type: basic
+        type: bef
         options:
           submit_button: Apply
           reset_button: false
@@ -175,6 +180,68 @@ display:
           expose_sort_order: true
           sort_asc_label: Asc
           sort_desc_label: Desc
+          text_input_required: 'Select any filter and click on Apply to see results'
+          text_input_required_format: basic_html
+          bef:
+            general:
+              autosubmit: true
+              auto_submit_sort_only: false
+              autosubmit_breakpoint: ''
+              autosubmit_exclude_textfield: false
+              autosubmit_textfield_delay: 500
+              autosubmit_textfield_minimum_length: 3
+              autosubmit_hide: true
+              input_required: false
+              allow_secondary: false
+              secondary_label: 'Advanced options'
+              secondary_open: false
+              reset_button_always_show: false
+            filter:
+              field_drupal_version_target_id:
+                plugin_id: default
+                advanced:
+                  sort_options: false
+                  sort_options_method: alphabetical_asc
+                  sort_options_natural: true
+                  rewrite:
+                    filter_rewrite_values: ''
+                    filter_rewrite_values_key: false
+                  collapsible: false
+                  collapsible_disable_automatic_open: false
+                  open_by_default: false
+                  is_secondary: false
+                  hide_label: false
+                  field_classes: ''
+              field_audience_target_id:
+                plugin_id: default
+                advanced:
+                  sort_options: false
+                  sort_options_method: alphabetical_asc
+                  sort_options_natural: true
+                  rewrite:
+                    filter_rewrite_values: ''
+                    filter_rewrite_values_key: false
+                  collapsible: false
+                  collapsible_disable_automatic_open: false
+                  open_by_default: false
+                  is_secondary: false
+                  hide_label: false
+                  field_classes: ''
+              field_base_theme_target_id:
+                plugin_id: default
+                advanced:
+                  sort_options: false
+                  sort_options_method: alphabetical_asc
+                  sort_options_natural: true
+                  rewrite:
+                    filter_rewrite_values: ''
+                    filter_rewrite_values_key: false
+                  collapsible: false
+                  collapsible_disable_automatic_open: false
+                  open_by_default: false
+                  is_secondary: false
+                  hide_label: false
+                  field_classes: ''
       access:
         type: perm
         options:
@@ -231,7 +298,10 @@ display:
           admin_label: ''
           plugin_id: taxonomy_index_tid
           operator: or
-          value: {  }
+          value:
+            8: 8
+            43: 43
+            44: 44
           group: 1
           exposed: true
           expose:
@@ -253,7 +323,7 @@ display:
               content_editor: '0'
               builder: '0'
               administrator: '0'
-            reduce: false
+            reduce: true
           is_grouped: false
           group_info:
             label: ''
