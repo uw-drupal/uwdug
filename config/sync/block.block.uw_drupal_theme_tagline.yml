@@ -1,0 +1,30 @@
+uuid: d57d03ad-0845-4514-a1ce-8a274b750a96
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:f61a86d6-43be-4064-930d-8146fc1846e7'
+  module:
+    - block_content
+    - system
+  theme:
+    - uw_drupal_theme
+id: uw_drupal_theme_tagline
+theme: uw_drupal_theme
+region: content
+weight: -2
+provider: null
+plugin: 'block_content:f61a86d6-43be-4064-930d-8146fc1846e7'
+settings:
+  id: 'block_content:f61a86d6-43be-4064-930d-8146fc1846e7'
+  label: Tagline
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'
