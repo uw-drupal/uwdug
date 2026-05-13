@@ -3,7 +3,7 @@
         'name' => 'drupal/recommended-project',
         'pretty_version' => '10.x-dev',
         'version' => '10.9999999.9999999.9999999-dev',
-        'reference' => '1c1ca330c3e853b3e4423599a570c0a66de30224',
+        'reference' => '64238ad20376cd71fbeeb6389a483d5a51befd0c',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -505,6 +505,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'drupal/menu_block' => array(
+            'pretty_version' => '1.14.0',
+            'version' => '1.14.0.0',
+            'reference' => '8.x-1.14',
+            'type' => 'drupal-module',
+            'install_path' => __DIR__ . '/../../web/modules/contrib/menu_block',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'drupal/migrate_plus' => array(
             'pretty_version' => '6.0.10',
             'version' => '6.0.10.0',
@@ -562,7 +571,7 @@
         'drupal/recommended-project' => array(
             'pretty_version' => '10.x-dev',
             'version' => '10.9999999.9999999.9999999-dev',
-            'reference' => '1c1ca330c3e853b3e4423599a570c0a66de30224',
+            'reference' => '64238ad20376cd71fbeeb6389a483d5a51befd0c',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
