@@ -37,6 +37,7 @@
         "drupal/module_filter": "^5.0",
         "drupal/pathauto": "^1.15",
         "drupal/redirect": "^1.13",
+        "drupal/views_bootstrap": "^4.5",
         "drupal/webform": "^6.2",
         "drush/drush": "^13.7"
     },
