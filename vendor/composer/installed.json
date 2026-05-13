@@ -1695,6 +1695,60 @@
             "install-path": "../../web/modules/contrib/better_exposed_filters"
         },
         {
+            "name": "drupal/blocache",
+            "version": "2.0.0",
+            "version_normalized": "2.0.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/blocache.git",
+                "reference": "2.0.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/blocache-2.0.0.zip",
+                "reference": "2.0.0",
+                "shasum": "ca6f22757120f2f307203f3d16fcd1b278f9a505"
+            },
+            "require": {
+                "drupal/core": "^9.1 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.0",
+                    "datestamp": "1677074183",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "installation-source": "dist",
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Douglas da Rosa Pilar",
+                    "homepage": "https://www.drupal.org/u/docapilar",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Dexa",
+                    "homepage": "https://www.dexa.ag",
+                    "role": "Co-maintainer"
+                }
+            ],
+            "description": "Allows users to individually configure the cache of each block.",
+            "homepage": "https://www.drupal.org/project/blocache",
+            "support": {
+                "source": "https://git.drupalcode.org/project/blocache",
+                "issues": "https://drupal.org/project/issues/blocache"
+            },
+            "install-path": "../../web/modules/contrib/blocache"
+        },
+        {
             "name": "drupal/config_split",
             "version": "2.0.2",
             "version_normalized": "2.0.2.0",
