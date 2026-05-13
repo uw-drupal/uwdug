@@ -1,0 +1,13 @@
+uuid: 87b773e4-cb37-4c8d-a923-3fcd2d71f819
+langcode: en
+status: true
+dependencies: {  }
+id: weekly_database
+label: 'Weekly - database'
+enabled: true
+keep: 24
+period: 604800
+cron: null
+source_id: default_db
+destination_id: scheduled_database
+settings_profile_id: default_backup

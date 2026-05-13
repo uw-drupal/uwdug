@@ -1,0 +1,9 @@
+uuid: 56031d55-76ef-4f03-b545-8e030e3f1096
+langcode: en
+status: true
+dependencies: {  }
+id: scheduled_database
+label: 'Scheduled - database'
+type: Directory
+config:
+  directory: 'private://backup_migrate/scheduled/database'

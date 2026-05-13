@@ -1,0 +1,52 @@
+uuid: 74f78968-beac-436b-9557-ce3beff37aed
+langcode: en
+status: true
+dependencies: {  }
+id: default_backup
+label: 'Default backup'
+config:
+  namer:
+    filename: backup
+    timestamp: true
+    timestamp_format: Y-m-d\TH-i-s
+  compressor:
+    compression: gzip
+  utils:
+    site_offline: false
+  metadata:
+    description: ''
+  db_exclude:
+    exclude_tables: {  }
+    nodata_tables:
+      cache_access_policy: cache_access_policy
+      cache_bootstrap: cache_bootstrap
+      cache_config: cache_config
+      cache_container: cache_container
+      cache_data: cache_data
+      cache_default: cache_default
+      cache_discovery: cache_discovery
+      cache_discovery_migration: cache_discovery_migration
+      cache_dynamic_page_cache: cache_dynamic_page_cache
+      cache_entity: cache_entity
+      cache_menu: cache_menu
+      cache_migrate: cache_migrate
+      cache_page: cache_page
+      cache_render: cache_render
+      cache_toolbar: cache_toolbar
+      sessions: sessions
+  private_files_exclude:
+    exclude_filepaths:
+      - backup_migrate
+  public_files_exclude:
+    exclude_filepaths:
+      - js
+      - css
+      - php
+      - styles
+      - 'config_*'
+      - .htaccess
+  notify:
+    notify_success_enable: 0
+    notify_success_email: jvogt+drupal@uw.edu
+    notify_failure_enable: 1
+    notify_failure_email: jvogt+drupal@uw.edu

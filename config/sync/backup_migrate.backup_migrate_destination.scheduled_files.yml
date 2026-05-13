@@ -1,0 +1,9 @@
+uuid: add08a16-1524-46d7-b0db-84dc7cdb04f5
+langcode: en
+status: true
+dependencies: {  }
+id: scheduled_files
+label: 'Scheduled - files'
+type: Directory
+config:
+  directory: 'private://backup_migrate/scheduled/files'

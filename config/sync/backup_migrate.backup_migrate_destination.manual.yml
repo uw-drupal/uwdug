@@ -1,0 +1,9 @@
+uuid: f07572f5-c116-4baa-ac06-73de266a678c
+langcode: en
+status: true
+dependencies: {  }
+id: manual
+label: Manual
+type: Directory
+config:
+  directory: 'private://backup_migrate/manual'
