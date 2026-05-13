@@ -19,7 +19,8 @@ source:
   plugin: d7_file
   scheme: public
   constants:
-    source_base_path: /data/www/facweb23.s.uw.edu/uwdrupal/sites/default/files/
+    source_base_path: /data/www/facweb23.s.uw.edu/uwdrupal-d7
+    # source_base_path: /data/www/facweb23.s.uw.edu/uwdrupal/sites/default/files/
 process:
   fid:
     -
