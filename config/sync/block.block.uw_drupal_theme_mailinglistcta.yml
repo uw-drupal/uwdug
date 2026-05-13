@@ -1,0 +1,30 @@
+uuid: 937b87f0-1fc5-4ed6-8ba3-7539b9646f24
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:6c596f00-fc88-4024-a488-4f59b238aacc'
+  module:
+    - block_content
+    - system
+  theme:
+    - uw_drupal_theme
+id: uw_drupal_theme_mailinglistcta
+theme: uw_drupal_theme
+region: sidebar_first
+weight: -4
+provider: null
+plugin: 'block_content:6c596f00-fc88-4024-a488-4f59b238aacc'
+settings:
+  id: 'block_content:6c596f00-fc88-4024-a488-4f59b238aacc'
+  label: 'Mailing list'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

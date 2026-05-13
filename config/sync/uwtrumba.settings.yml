@@ -1,0 +1,19 @@
+_core:
+  default_config_hash: ghPqjqcR3B-fZiR6Qi_mHEXteeOwtzYgsIke6PEulH4
+calendar:
+  path: calendar
+  title: 'Event calendar'
+webname: sea_uwit-techconnect-drupal
+intro_text:
+  value: ''
+  format: plain_text
+tabchooser: 1
+managelink: 1
+submitevent:
+  enable: 0
+  code: ''
+  width: '385'
+  height: '775'
+  backgroundcolor: white
+upcoming_spud_type: upcoming
+async_spuds: 0

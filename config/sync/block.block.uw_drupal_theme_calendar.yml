@@ -1,0 +1,39 @@
+uuid: a9223aa6-863d-4aa9-945b-c9aee8122e2c
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+    - uwtrumba
+  theme:
+    - uw_drupal_theme
+id: uw_drupal_theme_calendar
+theme: uw_drupal_theme
+region: sidebar_first
+weight: 0
+provider: null
+plugin: spud
+settings:
+  id: spud
+  label: 'Trumba - Date finder'
+  label_display: '0'
+  provider: uwtrumba
+  webname: sea_uwit-techconnect-drupal
+  block_type: datefinder
+  block_type_custom: null
+  calendar_path: /calendar
+  spud_config: ''
+  trumba_embed: ''
+  upcoming_display: null
+  upcoming_keyword: ''
+  tabchooser: 0
+  managelink: 0
+  submitevent_code: ''
+  submitevent_width: ''
+  submitevent_height: ''
+  submitevent_backgroundcolor: ''
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /calendar
