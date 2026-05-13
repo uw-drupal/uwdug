@@ -1,4 +1,4 @@
-uuid: a9223aa6-863d-4aa9-945b-c9aee8122e2c
+uuid: e25eec94-e3f7-4f83-a6a4-e23be29bfcc4
 langcode: en
 status: true
 dependencies:
@@ -7,19 +7,19 @@ dependencies:
     - uwtrumba
   theme:
     - uw_drupal_theme
-id: uw_drupal_theme_calendar
+id: uw_drupal_theme_calendar_search
 theme: uw_drupal_theme
 region: sidebar_first
-weight: -3
+weight: 0
 provider: null
 plugin: spud
 settings:
   id: spud
-  label: 'Trumba - Date finder'
-  label_display: '0'
+  label: Search
+  label_display: visible
   provider: uwtrumba
   webname: sea_uwit-techconnect-drupal
-  block_type: datefinder
+  block_type: search
   block_type_custom: null
   calendar_path: /calendar
   spud_config: ''

@@ -1,4 +1,4 @@
-uuid: a9223aa6-863d-4aa9-945b-c9aee8122e2c
+uuid: 25249802-b4fb-4c7e-9fac-7d14fd09cecd
 langcode: en
 status: true
 dependencies:
@@ -7,19 +7,19 @@ dependencies:
     - uwtrumba
   theme:
     - uw_drupal_theme
-id: uw_drupal_theme_calendar
+id: uw_drupal_theme_calendar_upcominglist
 theme: uw_drupal_theme
 region: sidebar_first
-weight: -3
+weight: -5
 provider: null
 plugin: spud
 settings:
   id: spud
-  label: 'Trumba - Date finder'
-  label_display: '0'
+  label: 'Uncoming events'
+  label_display: visible
   provider: uwtrumba
   webname: sea_uwit-techconnect-drupal
-  block_type: datefinder
+  block_type: upcoming
   block_type_custom: null
   calendar_path: /calendar
   spud_config: ''
@@ -36,4 +36,4 @@ visibility:
   request_path:
     id: request_path
     negate: false
-    pages: /calendar
+    pages: '<front>'
