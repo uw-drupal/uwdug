@@ -48,9 +48,11 @@ process:
       source: description
   menu_name:
     -
-      plugin: migration_lookup
-      migration: dug_d7_menu
+      plugin: static_map
       source: menu_name
+      bypass: true
+      map:
+        main-menu: main
     -
       plugin: skip_on_empty
       method: row
@@ -119,10 +121,10 @@ migration_dependencies:
   required:
     - dug_d7_menu
   optional:
-    - dug_d7_node_complete_article
+    # - dug_d7_node_complete_article
     - dug_d7_node_complete_page
-    - dug_d7_node_complete_showcase_item_
+    - dug_d7_node_complete_showcase_item
     - dug_d7_node_complete_wiki_page
-    - dug_d7_node_complete_webform
+    # - dug_d7_node_complete_webform
     - dug_d7_menu
 include: null
