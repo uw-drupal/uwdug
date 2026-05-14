@@ -30,6 +30,7 @@
         "drupal/field_group": "^4.0",
         "drupal/gin": "^4.1",
         "drupal/google_analytics": "^4.0",
+        "drupal/layout_builder_styles": "^2.1",
         "drupal/menu_block": "^1.14",
         "drupal/migrate_plus": "^6.0",
         "drupal/migrate_tools": "^6.1",
