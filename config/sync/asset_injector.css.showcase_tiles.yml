@@ -1,0 +1,42 @@
+uuid: 5c0ce89a-edcd-4ac1-8fbd-5268651d5135
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: showcase_tiles
+label: 'Showcase tiles'
+code: |-
+  .sc-grid .row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+  }
+  .sc-tile {
+      padding: 18px;
+      background-color: #ece9e2;
+      border-top: solid 13px #4b2e83;
+      margin: 15px;
+      -webkit-box-shadow: 0 0 4px rgba(164, 164, 164, 0.5);
+      box-shadow: 0 0 4px rgba(164, 164, 164, 0.5);
+  }
+  .sc-tile h2 {
+      text-align: center;
+      font-size: 20px;
+      font-weight: 600;
+      height: 60px;
+      margin: 0;
+  }
+  .sc-tile h2 a {
+      text-decoration: underline;   
+  }
+media: all
+preprocess: true
+conditions:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /showcase
+contexts: {  }
+conditions_require_all: true
