@@ -26,10 +26,12 @@ class ComposerStaticInit912487cae028eb1c5b00467a134e77d4
         '2f69d3914119f042cca9e44442d5ce95' => __DIR__ . '/../..' . '/web/core/includes/bootstrap.inc',
         '23c18046f52bef3eea034657bafda50f' => __DIR__ . '/..' . '/symfony/polyfill-php81/bootstrap.php',
         '2cffec82183ee1cea088009cef9a6fc3' => __DIR__ . '/..' . '/ezyang/htmlpurifier/library/HTMLPurifier.composer.php',
+        '3917c79c5052b270641b5a200963dbc2' => __DIR__ . '/..' . '/kint-php/kint/init.php',
         '47e1160838b5e5a10346ac4084b58c23' => __DIR__ . '/..' . '/laravel/prompts/src/helpers.php',
         '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
         'fbeead2280a8f3911a1fe6dd034f7d5e' => __DIR__ . '/..' . '/mkalkbrenner/php-htmldiff-advanced/src/HtmlDiffAdvancedInterface.php',
         '96f8d8288528d52059397cad6ec61f17' => __DIR__ . '/..' . '/mkalkbrenner/php-htmldiff-advanced/src/HtmlDiffAdvanced.php',
+        '4916e0e761787ab95e7bc0302ca4f0f2' => __DIR__ . '/../..' . '/web/modules/contrib/kint/init.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -100,6 +102,11 @@ class ComposerStaticInit912487cae028eb1c5b00467a134e77d4
         array (
             'League\\Container\\' => 17,
             'Laravel\\Prompts\\' => 16,
+        ),
+        'K' =>
+        array (
+            'Kint\\Twig\\' => 10,
+            'Kint\\' => 5,
         ),
         'G' =>
         array (
@@ -334,6 +341,14 @@ class ComposerStaticInit912487cae028eb1c5b00467a134e77d4
         'Laravel\\Prompts\\' =>
         array (
             0 => __DIR__ . '/..' . '/laravel/prompts/src',
+        ),
+        'Kint\\Twig\\' =>
+        array (
+            0 => __DIR__ . '/..' . '/kint-php/kint-twig/src',
+        ),
+        'Kint\\' =>
+        array (
+            0 => __DIR__ . '/..' . '/kint-php/kint/src',
         ),
         'GuzzleHttp\\Psr7\\' =>
         array (
