@@ -1,0 +1,12 @@
+uuid: d66d8aac-41e3-44f8-8724-39197a787f9e
+langcode: en
+status: true
+dependencies: {  }
+id: inset_light_gold_bg
+label: 'Inset - light gold bg'
+classes: "inset--solid-bg\r\ninset--light-gold"
+type: component
+group: default
+block_restrictions: {  }
+layout_restrictions: {  }
+weight: 0

@@ -1,0 +1,50 @@
+uuid: 5c51c134-6240-4789-b3fc-59b0af8e32bd
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: bonus_styles
+label: 'Bonus styles'
+code: |-
+  .text--impact {
+      font-family: "Encode Sans Compressed", sans-serif;
+      font-size: 24px;
+      margin-bottom: 1em;
+  }
+  .inset--solid-bg {
+    padding: 20px;
+    background-color: #eee;
+    margin-bottom: 20px;
+    h2:first-child,
+    h3:first-child {
+      margin-top: 0;
+    }
+    &.inset--gold {
+      background-color: #85754d;
+      * {
+        color: #fff;
+      }
+      a {
+        font-weight: bold;
+      }
+    }
+    &.inset--light-gold {
+      background-color: #b7a57a;
+      /** {*/
+      /*  color: #fff;*/
+      /*}*/
+      a {
+        font-weight: bold;
+      }
+    }
+  }
+media: all
+preprocess: true
+conditions:
+  current_theme:
+    id: current_theme
+    negate: false
+    theme: uw_drupal_theme
+contexts: {  }
+conditions_require_all: true

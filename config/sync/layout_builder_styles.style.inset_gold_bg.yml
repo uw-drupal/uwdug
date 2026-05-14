@@ -1,0 +1,12 @@
+uuid: e5736871-c2fc-46a2-ab38-172091dc448a
+langcode: en
+status: true
+dependencies: {  }
+id: inset_gold_bg
+label: 'Inset - gold bg'
+classes: "inset--solid-bg\r\ninset--gold"
+type: component
+group: default
+block_restrictions: {  }
+layout_restrictions: {  }
+weight: 0

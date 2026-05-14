@@ -1,0 +1,12 @@
+uuid: c48d335d-191f-4a0e-b533-73490bbef037
+langcode: en
+status: true
+dependencies: {  }
+id: impact_text
+label: 'Impact text'
+classes: text--impact
+type: component
+group: default
+block_restrictions: {  }
+layout_restrictions: {  }
+weight: 0

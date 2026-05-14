@@ -5,19 +5,11 @@ dependencies: {  }
 name: screenshot
 label: 'Large Screenshot'
 effects:
-  01010a96-30f6-44d3-96dd-37f2d93f020e:
-    uuid: 01010a96-30f6-44d3-96dd-37f2d93f020e
-    id: image_crop
-    weight: -9
+  29c1df18-4aad-46b2-a6bc-8025d70e8c3a:
+    uuid: 29c1df18-4aad-46b2-a6bc-8025d70e8c3a
+    id: image_scale_and_crop
+    weight: 2
     data:
-      width: 420
-      height: 504
+      width: 500
+      height: 600
       anchor: center-top
-  107b0bc6-4db1-4213-a842-18cd3ca86108:
-    uuid: 107b0bc6-4db1-4213-a842-18cd3ca86108
-    id: image_scale
-    weight: -10
-    data:
-      width: 420
-      height: null
-      upscale: false

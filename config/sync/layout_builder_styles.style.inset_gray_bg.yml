@@ -1,0 +1,12 @@
+uuid: 66fa581e-66cc-49b5-8769-cbab21721c64
+langcode: en
+status: true
+dependencies: {  }
+id: inset_gray_bg
+label: 'Inset - gray bg'
+classes: inset--solid-bg
+type: component
+group: default
+block_restrictions: {  }
+layout_restrictions: {  }
+weight: 0
