@@ -4,3 +4,32 @@
  * @file
  * Primary module hooks for Migrate UW Drupal module.
  */
+
+use Drupal\migrate\MigrateSkipRowException;
+use Drupal\migrate\Plugin\MigrateSourceInterface;
+use Drupal\migrate\Plugin\MigrationInterface;
+use Drupal\migrate\Row;
+
+/**
+ * Implements hook_migrate_prepare_row().
+ */
+function migrate_uwdrupal_migrate_prepare_row(Row $row, MigrateSourceInterface $source, MigrationInterface $migration) {
+  switch ($migration->id()) {
+    case 'dug_d7_url_alias':
+      $path = $row->getSourceProperty('source');
+      if (str_starts_with($path, 'eform/')) {
+        throw new MigrateSkipRowException(t("Intentionally skipped path @path.", [
+          '@path' => $path,
+        ]), TRUE);
+      }
+      break;
+
+    case 'dug_d7_user':
+      $email = $row->getSourceProperty('mail');
+      if (str_ends_with($email, '@washington.edu')) {
+        $row->setSourceProperty('mail', str_replace('@washington.edu', '@uw.edu', $email));
+      }
+      break;
+  }
+}
+
