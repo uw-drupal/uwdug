@@ -21,20 +21,22 @@ source:
   node_type: showcase_item_
   constants:
     destination_node_type: showcase_item
+    langcode: en
+    revision_translation_affected: true
 process:
   nid:
     -
       plugin: get
       source: tnid
-  vid:
-    -
-      plugin: get
-      source: vid
-  langcode:
-    -
-      plugin: default_value
-      source: language
-      default_value: und
+  # vid:
+  #   -
+  #     plugin: get
+  #     source: vid
+  langcode: constants/langcode
+    # -
+    #   plugin: default_value
+    #   source: language
+    #   default_value: und
   title:
     -
       plugin: get
@@ -75,6 +77,7 @@ process:
     -
       plugin: get
       source: timestamp
+  revision_translation_affected: constants/revision_translation_affected
   content_translation_source:
     -
       plugin: get
@@ -129,6 +132,20 @@ process:
     -
       plugin: get
       source: field_organization_description
+  field_organization:
+    -
+      plugin: get
+      source: field_organization
+  field_site_contact_name:
+    -
+      plugin: get
+      source: field_site_contact_name
+  field_site_contact_email:
+    -
+      plugin: sub_process
+      source: field_site_contact_email
+      process:
+        value: email
 destination:
   plugin: 'entity_complete:node'
   translations: true

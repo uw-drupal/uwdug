@@ -19,20 +19,23 @@ label: 'Node complete (Basic page)'
 source:
   plugin: d7_node_complete
   node_type: page
+  constants:
+    langcode: en
+    revision_translation_affected: true
 process:
   nid:
     -
       plugin: get
       source: tnid
-  vid:
-    -
-      plugin: get
-      source: vid
-  langcode:
-    -
-      plugin: default_value
-      source: language
-      default_value: und
+  # vid:
+  #   -
+  #     plugin: get
+  #     source: vid
+  langcode: constants/langcode
+    # -
+    #   plugin: default_value
+    #   source: language
+    #   default_value: und
   title:
     -
       plugin: get
@@ -73,6 +76,7 @@ process:
     -
       plugin: get
       source: timestamp
+  revision_translation_affected: constants/revision_translation_affected
   content_translation_source:
     -
       plugin: get
