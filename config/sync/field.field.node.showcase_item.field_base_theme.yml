@@ -1,4 +1,4 @@
-uuid: eb42ba62-7657-4a4e-b4a3-6d5f742c6a8e
+uuid: b3d41029-b470-410f-b065-1f5de216149b
 langcode: en
 status: true
 dependencies:
@@ -23,7 +23,4 @@ settings:
       base_themes: base_themes
     sort:
       field: _none
-      direction: asc
-    auto_create: false
-    auto_create_bundle: ''
 field_type: entity_reference

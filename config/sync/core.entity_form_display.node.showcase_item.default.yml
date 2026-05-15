@@ -1,4 +1,4 @@
-uuid: 3c0a4f28-ae41-490c-9dfc-660ed45658bf
+uuid: 39485f60-56b0-4354-afce-f3ccaa6eeee3
 langcode: en
 status: true
 dependencies:
@@ -8,7 +8,10 @@ dependencies:
     - field.field.node.showcase_item.field_base_theme
     - field.field.node.showcase_item.field_drupal_version
     - field.field.node.showcase_item.field_image
+    - field.field.node.showcase_item.field_organization
     - field.field.node.showcase_item.field_organization_description
+    - field.field.node.showcase_item.field_site_contact_email
+    - field.field.node.showcase_item.field_site_contact_name
     - field.field.node.showcase_item.field_site_type
     - field.field.node.showcase_item.field_url
     - node.type.showcase_item
@@ -55,12 +58,36 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_organization:
+    type: string_textfield
+    weight: 11
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_organization_description:
     type: string_textarea
     weight: 1
     region: content
     settings:
       rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_site_contact_email:
+    type: email_default
+    weight: 13
+    region: content
+    settings:
+      placeholder: ''
+      size: 60
+    third_party_settings: {  }
+  field_site_contact_name:
+    type: string_textfield
+    weight: 12
+    region: content
+    settings:
+      size: 60
       placeholder: ''
     third_party_settings: {  }
   field_site_type:

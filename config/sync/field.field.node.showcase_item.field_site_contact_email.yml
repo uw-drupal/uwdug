@@ -1,0 +1,19 @@
+uuid: 056d05ea-29b6-4df2-91da-258f2f43729a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_site_contact_email
+    - node.type.showcase_item
+id: node.showcase_item.field_site_contact_email
+field_name: field_site_contact_email
+entity_type: node
+bundle: showcase_item
+label: 'Site contact email'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

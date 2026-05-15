@@ -1,0 +1,19 @@
+uuid: 2416c30a-14c7-4414-b47c-c166c38d3be7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_site_contact_name
+    - node.type.showcase_item
+id: node.showcase_item.field_site_contact_name
+field_name: field_site_contact_name
+entity_type: node
+bundle: showcase_item
+label: 'Site contact name'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
