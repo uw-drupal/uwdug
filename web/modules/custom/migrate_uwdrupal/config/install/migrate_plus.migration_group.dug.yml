@@ -5,7 +5,7 @@ dependencies:
     module:
       - migrate_uwdrupal
 id: dug
-label: 'Import from Drupal 7'
+label: 'UW DUG D7'
 description: 'Migrations originally generated from drush migrate-upgrade --configure-only'
 source_type: 'Drupal 7'
 module: null

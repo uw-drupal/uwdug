@@ -19,6 +19,7 @@ source:
   plugin: d7_url_alias
   constants:
     slash: /
+    language: en
 process:
   id:
     -
@@ -61,7 +62,8 @@ process:
       plugin: null_coalesce
       source:
         - '@node_translation/1'
-        - language
+        # - language
+        - constants/language
   path:
     -
       plugin: path_set_translated

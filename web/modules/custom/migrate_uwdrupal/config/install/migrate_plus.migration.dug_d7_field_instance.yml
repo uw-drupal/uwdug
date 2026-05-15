@@ -135,7 +135,7 @@ idMap: {  }
 migration_dependencies:
   required:
     - dug_d7_field
-  optional:
     - dug_d7_node_type
-    - dug_d7_taxonomy_vocabulary
+  optional: {  }
+    # - dug_d7_taxonomy_vocabulary
 include: null

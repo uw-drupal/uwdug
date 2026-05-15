@@ -18,6 +18,8 @@ label: 'User accounts'
 source:
 #  plugin: d7_user
   plugin: d7_shibboleth_user
+  constants:
+    langcode: en
 process:
   uid:
     # -
@@ -66,17 +68,20 @@ process:
   langcode:
     -
       plugin: user_langcode
-      source: entity_language
+      source: constants/langcode
+      # source: entity_language
       fallback_to_site_default: false
   preferred_langcode:
     -
       plugin: user_langcode
-      source: language
+      source: constants/langcode
+      # source: language
       fallback_to_site_default: true
   preferred_admin_langcode:
     -
       plugin: user_langcode
-      source: language
+      source: constants/langcode
+      # source: language
       fallback_to_site_default: true
   init:
     -

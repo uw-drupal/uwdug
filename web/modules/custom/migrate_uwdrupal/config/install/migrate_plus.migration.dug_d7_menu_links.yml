@@ -19,6 +19,7 @@ source:
   plugin: menu_link
   constants:
     bundle: menu_link_content
+    langcode: en
 process:
   skip_translation:
     -
@@ -29,11 +30,11 @@ process:
     -
       plugin: get
       source: mlid
-  langcode:
-    -
-      plugin: default_value
-      source: language
-      default_value: und
+  langcode: constants/langcode
+    # -
+    #   plugin: default_value
+    #   source: language
+    #   default_value: und
   bundle:
     -
       plugin: get
